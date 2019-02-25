@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Recent &amp; Upcoming Talks on Milad Roohi</title>
+    <link>/talk/</link>
+    <description>Recent content in Recent &amp; Upcoming Talks on Milad Roohi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 -0500</lastBuildDate>
+    
+	<atom:link href="/talk/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Element-by-Element Demand-to-Capacity Ratio Estimation from SMRF Building Seismic Records</title>
+      <link>/talk/evaces/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 -0500</pubDate>
+      
+      <guid>/talk/evaces/</guid>
+      <description>Click on the Slides button above to view the built-in slides feature.
+  Slides can be added in a few ways:
+ Create slides using Academic&amp;rsquo;s Slides feature and link using url_slides parameter in the front matter of the talk file Upload an existing slide deck to static/ and link using url_slides parameter in the front matter of the talk file Embed your slides (e.g. Google Slides) or presentation video on this page using shortcodes.</description>
+    </item>
+    
+    <item>
+      <title>Element-by-element seismic damage diagnosis and prognosis in minimally instrumented woodframe buildings</title>
+      <link>/talk/csu/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 -0500</pubDate>
+      
+      <guid>/talk/csu/</guid>
+      <description>Click on the Slides button above to view the built-in slides feature.
+  Slides can be added in a few ways:
+ Create slides using Academic&amp;rsquo;s Slides feature and link using url_slides parameter in the front matter of the talk file Upload an existing slide deck to static/ and link using url_slides parameter in the front matter of the talk file Embed your slides (e.g. Google Slides) or presentation video on this page using shortcodes.</description>
+    </item>
+    
+    <item>
+      <title>Element-by-element seismic damage diagnosis and prognosis in minimally instrumented woodframe buildings</title>
+      <link>/talk/mit/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 -0500</pubDate>
+      
+      <guid>/talk/mit/</guid>
+      <description>Click on the Slides button above to view the built-in slides feature.
+  Slides can be added in a few ways:
+ Create slides using Academic&amp;rsquo;s Slides feature and link using url_slides parameter in the front matter of the talk file Upload an existing slide deck to static/ and link using url_slides parameter in the front matter of the talk file Embed your slides (e.g. Google Slides) or presentation video on this page using shortcodes.</description>
+    </item>
+    
+  </channel>
+</rss>

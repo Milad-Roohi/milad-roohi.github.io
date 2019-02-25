@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>admin on Milad Roohi</title>
+    <link>/authors/admin/</link>
+    <description>Recent content in admin on Milad Roohi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="/authors/admin/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>/author/admin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/author/admin/</guid>
+      <description>I am a a Ph.D. Candidate at Structural Monitoring, Diagnostics and Prognostics Lab (SMDP) at the University of Vermont (UVM), co-supervised by Dr. Eric. M. Hernandez and Dr. David V. Rosowsky. My research interests lie at the intersection of disaster resilience, structural engineering, control systems engineering and computer science.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Structural Health Monitoring on Milad Roohi</title>
+    <link>/tags/structural-health-monitoring/</link>
+    <description>Recent content in Structural Health Monitoring on Milad Roohi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 27 Apr 2016 00:00:00 -0400</lastBuildDate>
+    
+	<atom:link href="/tags/structural-health-monitoring/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Structural Health Monitoring, Diagnosis and Prognosis of Minimally Instrumented Structural Systems</title>
+      <link>/project/internal-project/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 -0400</pubDate>
+      
+      <guid>/project/internal-project/</guid>
+      <description>The research in this project investigates a new framework for structural health monitoring of structures subjected to cumulative damage such as fatigue. This project deviates from the conventional approach of identifying damage as changes in model parameters. Instead, this project will investigate a novel framework that combines probabilistic damage mechanics and dynamic state estimation. A new algorithm will be developed which will be capable of optimally combining the predictive capabilities of multi-scale finite element models with that of sensor measurements to reconstruct the complete dynamic response of a structure.</description>
+    </item>
+    
+  </channel>
+</rss>
