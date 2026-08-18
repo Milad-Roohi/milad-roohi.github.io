@@ -331,6 +331,90 @@ section { padding: 4.5rem 0; }
   transform: translateY(-1px);
 }
 
+
+.meta-row {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.35rem 0.65rem;
+  margin-top: 0.7rem; font-size: 0.82rem;
+}
+.meta-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  min-width: 4.2rem;
+}
+.meta-row a {
+  color: var(--teal-deep);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(26,122,140,0.35);
+  text-underline-offset: 2px;
+}
+.meta-row a:hover { color: var(--teal); text-decoration-color: var(--teal); }
+.meta-row .sep { color: var(--line); }
+
+.funding-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+.funding-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.15rem 1.25rem;
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+}
+.funding-card:hover {
+  border-color: rgba(26,122,140,0.35);
+  box-shadow: 0 12px 28px rgba(15,28,46,0.07);
+  transform: translateY(-2px);
+}
+.funding-card .agency {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+.funding-card h3 {
+  font-size: 1.02rem;
+  font-weight: 700;
+  margin: 0.4rem 0 0.45rem;
+  line-height: 1.35;
+}
+.funding-card p { color: var(--ink-soft); font-size: 0.88rem; }
+.funding-card .f-links {
+  display: flex; flex-wrap: wrap; gap: 0.5rem;
+  margin-top: 0.85rem;
+}
+.funding-card .f-links a {
+  font-size: 0.75rem; font-weight: 700;
+  color: var(--teal-deep);
+  background: rgba(26,122,140,0.08);
+  border: 1px solid rgba(26,122,140,0.18);
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+}
+.funding-card .f-links a:hover { border-color: var(--teal); background: rgba(26,122,140,0.14); }
+.pub-theme {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  margin-top: 0.5rem;
+  font-size: 0.75rem; font-weight: 600;
+  color: var(--teal-deep);
+}
+.pub-theme a {
+  color: var(--teal-deep);
+  text-decoration: underline;
+  text-decoration-color: rgba(26,122,140,0.3);
+  text-underline-offset: 2px;
+}
+.pub-theme a:hover { color: var(--teal); }
+@media (max-width: 860px) {
+  .funding-grid { grid-template-columns: 1fr; }
+}
+
 /* Pubs */
 .pub-toolbar {
   display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center;
@@ -511,6 +595,7 @@ footer {
     <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
     <div class="nav-links" id="navLinks">
       <a href="#research">Research</a>
+      <a href="#funding">Funding</a>
       <a href="#publications">Publications</a>
       <a href="#news">News</a>
       <a href="#about">About</a>
@@ -581,11 +666,11 @@ footer {
     <div class="section-head">
       <p class="eyebrow">Research themes</p>
       <h2>From instrumented buildings to community recovery</h2>
-      <p>Four focus areas organize the lab’s programs—from asset digital twins to multi-hazard community systems and open platforms.</p>
+      <p>Four focus areas with direct links to <a href="#funding" style="color:var(--teal);font-weight:600;text-decoration:underline">funded projects</a> and <a href="#publications" style="color:var(--teal);font-weight:600;text-decoration:underline">selected papers</a>.</p>
     </div>
 
     <div class="research-categories">
-      <article class="research-cat">
+      <article class="research-cat" id="theme-dt-shm">
         <div class="research-cat-head">
           <h3>Digital twins &amp; structural health</h3>
           <span class="status-pill active">Active</span>
@@ -595,13 +680,23 @@ footer {
           <div class="r-num">01</div>
           <div>
             <h3>Asset digital twins &amp; SHM</h3>
-            <p>Damage, energy, and decision support via Bayesian / Kalman observers, PBEE-consistent post-event assessment, and NEESWood / CSMIP validation.</p>
-            <div class="tag-row"><span class="tag">Observers</span><span class="tag">PBEE</span><span class="tag">NEESWood</span></div>
+            <p>Damage, energy, and decision support via Bayesian / Kalman observers, performance-based post-event assessment, and full-scale validation.</p>
+            <div class="tag-row"><span class="tag">Sparse sensing</span><span class="tag">Model–data fusion</span><span class="tag">Full-scale validation</span></div>
+            <div class="meta-row"><span class="meta-label">Funding</span>
+              <a href="#fund-nasa-epscor">NASA EPSCoR sensing</a><span class="sep">·</span>
+              <a href="#fund-durham-seed">Durham seed (MEMS / DT)</a>
+            </div>
+            <div class="meta-row"><span class="meta-label">Papers</span>
+              <a href="#pub-jem-2021">J. Eng. Mech. 2021</a><span class="sep">·</span>
+              <a href="#pub-mssp-2021">MSSP 2021</a><span class="sep">·</span>
+              <a href="#pub-jcshm-2020">JCSHM 2020</a><span class="sep">·</span>
+              <a href="#pub-jobe-2022">J. Build. Eng. 2022</a>
+            </div>
           </div>
         </div>
       </article>
 
-      <article class="research-cat">
+      <article class="research-cat" id="theme-community">
         <div class="research-cat-head">
           <h3>Community resilience &amp; open platforms</h3>
           <span class="status-pill active">Active</span>
@@ -611,13 +706,23 @@ footer {
           <a href="https://tools.in-core.org/" target="_blank" rel="noopener">IN-CORE tools →</a>
           <a href="https://tools.in-core.org/doc/incore/introduction.html" target="_blank" rel="noopener">IN-CORE docs →</a>
           <a href="https://github.com/IN-CORE" target="_blank" rel="noopener">IN-CORE on GitHub →</a>
+          <a href="#funding">All funded projects →</a>
         </div>
         <div class="research-item">
           <div class="r-num">02</div>
           <div>
             <h3>Portfolio Bayesian updating &amp; functional recovery</h3>
             <p>From uncertain inventories to community FR metrics and retrofit prioritization under seismic and multi-hazard risk.</p>
-            <div class="tag-row"><span class="tag">CAREER thrust</span><span class="tag">FR</span></div>
+            <div class="tag-row"><span class="tag">Functional recovery</span><span class="tag">Retrofit prioritization</span></div>
+            <div class="meta-row"><span class="meta-label">Funding</span>
+              <a href="#fund-nist-incore">NIST / IN-CORE PREP</a><span class="sep">·</span>
+              <a href="#fund-nsf-pose">NSF POSE Phase II</a>
+            </div>
+            <div class="meta-row"><span class="meta-label">Papers</span>
+              <a href="#pub-ijdrr-2024-sediek">IJDRR 2024 (retrofit GA)</a><span class="sep">·</span>
+              <a href="#pub-risk-2024-sediek">ASCE-ASME Risk 2024</a><span class="sep">·</span>
+              <a href="#pub-rcns-2024">Resilient Cities 2024</a>
+            </div>
           </div>
         </div>
         <div class="research-item">
@@ -625,7 +730,15 @@ footer {
           <div>
             <h3>Building inventory &amp; exposure UQ</h3>
             <p>ML and Bayesian imputation so resilience metrics are not dominated by missing national inventory attributes.</p>
-            <div class="tag-row"><span class="tag">Imputation</span><span class="tag">Epistemic UQ</span></div>
+            <div class="tag-row"><span class="tag">Inventory gaps</span><span class="tag">Uncertainty quantification</span></div>
+            <div class="meta-row"><span class="meta-label">Funding</span>
+              <a href="#fund-nist-incore">NIST Center / IN-CORE</a><span class="sep">·</span>
+              <a href="#fund-durham-seed">Durham DT VV&amp;UQ seed</a>
+            </div>
+            <div class="meta-row"><span class="meta-label">Papers</span>
+              <a href="#pub-ijdrr-2026-ghasemi">IJDRR 2026 (imputation)</a><span class="sep">·</span>
+              <a href="#pub-sie-2021">Struct. Infrastruct. Eng. 2021</a>
+            </div>
           </div>
         </div>
         <div class="research-item">
@@ -633,12 +746,24 @@ footer {
           <div>
             <h3>IN-CORE &amp; open resilience platforms</h3>
             <p>Use-inspired testbeds and NSF POSE open-source ecosystem work so community models become decision tools.</p>
-            <div class="tag-row"><span class="tag">POSE II</span><span class="tag">NIST</span></div>
+            <div class="tag-row"><span class="tag">Open-source tools</span><span class="tag">Community testbeds</span></div>
+            <div class="meta-row"><span class="meta-label">Funding</span>
+              <a href="#fund-nsf-pose">NSF POSE Phase II (2026–2028)</a><span class="sep">·</span>
+              <a href="#fund-nist-incore">NIST PREP / IN-CORE</a>
+            </div>
+            <div class="meta-row"><span class="meta-label">Papers</span>
+              <a href="#pub-rcns-2024">Resilient Cities 2024</a><span class="sep">·</span>
+              <a href="#pub-sei-2024-makhoul">Struct. Eng. Int. 2024</a>
+            </div>
+            <div class="meta-row"><span class="meta-label">Tools</span>
+              <a href="https://tools.in-core.org/" target="_blank" rel="noopener">tools.in-core.org</a><span class="sep">·</span>
+              <a href="https://github.com/IN-CORE" target="_blank" rel="noopener">github.com/IN-CORE</a>
+            </div>
           </div>
         </div>
       </article>
 
-      <article class="research-cat">
+      <article class="research-cat" id="theme-multihazard">
         <div class="research-cat-head">
           <h3>Multi-hazard community systems</h3>
           <span class="status-pill active">Active</span>
@@ -649,7 +774,15 @@ footer {
           <div>
             <h3>Tornado &amp; extreme-wind resilience</h3>
             <p>Hazard-faithful wind/tornado community models and equity-centered planning for Plains and tribal communities.</p>
-            <div class="tag-row"><span class="tag">NSF CIVIC</span><span class="tag">Hindcasting</span></div>
+            <div class="tag-row"><span class="tag">Tornado / wind</span><span class="tag">Post-event data</span></div>
+            <div class="meta-row"><span class="meta-label">Funding</span>
+              <a href="#fund-nsf-civic">NSF CIVIC-PG (tribal wind)</a><span class="sep">·</span>
+              <a href="#fund-msu-civic">MSU Civic Science Media</a><span class="sep">·</span>
+              <a href="#fund-grand-challenges">UNL Grand Challenges</a>
+            </div>
+            <div class="meta-row"><span class="meta-label">Papers</span>
+              <a href="#publications">See Scholar + under-review tornado models</a>
+            </div>
           </div>
         </div>
         <div class="research-item">
@@ -657,13 +790,20 @@ footer {
           <div>
             <h3>Cascading multi-system consequences</h3>
             <p>Hospitals, lifelines, and services failing and recovering together—including year-long Hatay investigation after the 2023 Türkiye earthquakes.</p>
-            <div class="tag-row"><span class="tag">Editor’s Choice</span><span class="tag">Healthcare</span></div>
-            <span class="status-pill emerging" style="margin-top:0.65rem;display:inline-block">Emerging</span>
+            <div class="tag-row"><span class="tag">Hospital networks</span><span class="tag">Lifeline interdependency</span></div>
+            <div class="meta-row"><span class="meta-label">Funding</span>
+              <a href="#fund-nist-incore">NIST community resilience line</a><span class="sep">·</span>
+              <a href="#fund-unmc">UNL–UNMC compounding hazards</a>
+            </div>
+            <div class="meta-row"><span class="meta-label">Papers</span>
+              <a href="#pub-jse-2025-hatay">J. Struct. Eng. 2025 (Editor’s Choice)</a><span class="sep">·</span>
+              <a href="#pub-sei-2024-makhoul">Struct. Eng. Int. 2024</a>
+            </div>
           </div>
         </div>
       </article>
 
-      <article class="research-cat">
+      <article class="research-cat" id="theme-networks">
         <div class="research-cat-head">
           <h3>Networks &amp; emerging hazards</h3>
           <span class="status-pill emerging">Emerging</span>
@@ -674,7 +814,15 @@ footer {
           <div>
             <h3>Network &amp; transportation resilience</h3>
             <p>Bridge and network performance under flood, seismic, and climate stressors, linked to community outcomes.</p>
-            <div class="tag-row"><span class="tag">NDOT</span><span class="tag">MATC</span></div>
+            <div class="tag-row"><span class="tag">Bridges &amp; networks</span><span class="tag">Flood &amp; climate</span></div>
+            <div class="meta-row"><span class="meta-label">Funding</span>
+              <a href="#fund-ndot">NDOT bridge–network–community</a><span class="sep">·</span>
+              <a href="#fund-matc">MATC flood resilience</a><span class="sep">·</span>
+              <a href="#fund-acrp">NASEM/TRB ACRP airports</a>
+            </div>
+            <div class="meta-row"><span class="meta-label">Papers</span>
+              <a href="#pub-sri-2023">Sustain. Resilient Infrastruct. 2023</a>
+            </div>
           </div>
         </div>
         <div class="research-item">
@@ -682,8 +830,123 @@ footer {
           <div>
             <h3>Wildfire community resilience</h3>
             <p>Emerging line on wildfire exposure, community systems, and decision support for Plains / Midwest contexts.</p>
-            <div class="tag-row"><span class="tag">Incubating</span></div>
+            <div class="tag-row"><span class="tag">Wildland–urban interface</span></div>
+            <div class="meta-row"><span class="meta-label">Funding</span>
+              <a href="#funding">See incubating proposals / collaborations</a>
+            </div>
+            <div class="meta-row"><span class="meta-label">Papers</span>
+              <a href="#publications">Manuscript in review (wildfire AI)</a>
+            </div>
           </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="funding">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Funding &amp; partners</p>
+      <h2>Selected sponsored projects</h2>
+      <p>Each card links to the related research theme and representative publications. Full agency list also on <a href="https://sirius.unl.edu/research/" target="_blank" rel="noopener" style="color:var(--teal);font-weight:600;text-decoration:underline">sirius.unl.edu/research</a>.</p>
+    </div>
+    <div class="funding-grid">
+      <article class="funding-card" id="fund-nsf-pose">
+        <p class="agency">NSF · 2026–2028</p>
+        <h3>POSE Phase II — IN-CORE open-source ecosystem</h3>
+        <p>Open cyberinfrastructure and research ecosystem for interdependent networked community resilience modeling.</p>
+        <div class="f-links">
+          <a href="#theme-community">Theme →</a>
+          <a href="#pub-rcns-2024">Related paper →</a>
+          <a href="https://tools.in-core.org/" target="_blank" rel="noopener">IN-CORE →</a>
+        </div>
+      </article>
+      <article class="funding-card" id="fund-nsf-civic">
+        <p class="agency">NSF CIVIC-PG · 2024–2025</p>
+        <h3>Tribal community resilience to extreme wind</h3>
+        <p>Equity-centered, multidimensional engineering–social–economic framework for extreme-wind planning.</p>
+        <div class="f-links">
+          <a href="#theme-multihazard">Theme →</a>
+          <a href="#publications">Publications →</a>
+        </div>
+      </article>
+      <article class="funding-card" id="fund-nist-incore">
+        <p class="agency">NIST · IN-CORE / PREP</p>
+        <h3>Community functional recovery &amp; decision support</h3>
+        <p>Multi-disciplinary resilience modeling, inventory uncertainty, and community applications (e.g., Salt Lake, Memphis, LA County).</p>
+        <div class="f-links">
+          <a href="#theme-community">Theme →</a>
+          <a href="#pub-rcns-2024">Resilient Cities 2024 →</a>
+          <a href="#pub-ijdrr-2026-ghasemi">IJDRR 2026 →</a>
+        </div>
+      </article>
+      <article class="funding-card" id="fund-ndot">
+        <p class="agency">NDOT · 2023–2025</p>
+        <h3>Bridge, transportation network &amp; community resilience</h3>
+        <p>Systems framework linking bridge damage, network disruption, and community impacts for Nebraska investment planning.</p>
+        <div class="f-links">
+          <a href="#theme-networks">Theme →</a>
+          <a href="#pub-sri-2023">Related paper →</a>
+        </div>
+      </article>
+      <article class="funding-card" id="fund-matc">
+        <p class="agency">MATC · 2024–2025</p>
+        <h3>Equitable flood resilience for Nebraska transportation</h3>
+        <p>Flood and climate stressors on transportation systems with resilience-informed mitigation strategies.</p>
+        <div class="f-links">
+          <a href="#theme-networks">Theme →</a>
+        </div>
+      </article>
+      <article class="funding-card" id="fund-acrp">
+        <p class="agency">NASEM / TRB ACRP · 2026–2027</p>
+        <h3>Weather-resilient airport infrastructure investment</h3>
+        <p>Practitioner guidance for integrating weather resilience into airport planning decisions.</p>
+        <div class="f-links">
+          <a href="#theme-networks">Theme →</a>
+        </div>
+      </article>
+      <article class="funding-card" id="fund-nasa-epscor">
+        <p class="agency">NASA EPSCoR · 2024–2026</p>
+        <h3>Advanced sensing &amp; smart environments</h3>
+        <p>Sensing and research infrastructure supporting monitoring, data integration, and smart infrastructure applications.</p>
+        <div class="f-links">
+          <a href="#theme-dt-shm">Theme →</a>
+          <a href="#pub-jem-2021">JEM 2021 →</a>
+        </div>
+      </article>
+      <article class="funding-card" id="fund-msu-civic">
+        <p class="agency">MSU Civic Science Media · 2025–2027</p>
+        <h3>Tornado preparedness communication (Elkhorn, NE)</h3>
+        <p>Civic-science and media-engagement methods for tornado risk communication after the Elkhorn tornado.</p>
+        <div class="f-links">
+          <a href="#theme-multihazard">Theme →</a>
+        </div>
+      </article>
+      <article class="funding-card" id="fund-grand-challenges">
+        <p class="agency">UNL Grand Challenges · 2024–2025</p>
+        <h3>Climate Resilient Heartland</h3>
+        <p>AI-enabled tools for equitable risk reduction across interconnected rural and urban systems.</p>
+        <div class="f-links">
+          <a href="#theme-multihazard">Theme →</a>
+        </div>
+      </article>
+      <article class="funding-card" id="fund-durham-seed">
+        <p class="agency">UNL Durham School seeds</p>
+        <h3>Digital twins VV&amp;UQ · bio-inspired MEMS sensing</h3>
+        <p>Data-driven digital-twin frameworks with verification/validation/UQ, and low-cost sensing for post-earthquake assessment.</p>
+        <div class="f-links">
+          <a href="#theme-dt-shm">SHM theme →</a>
+          <a href="#theme-community">Inventory / FR →</a>
+        </div>
+      </article>
+      <article class="funding-card" id="fund-unmc">
+        <p class="agency">UNL NRI / Collaboration · 2026–2027</p>
+        <h3>Infrastructure–public health under compounding hazards</h3>
+        <p>Integrated modeling of infrastructure and public-health recovery with University of Nebraska Medical Center partners.</p>
+        <div class="f-links">
+          <a href="#theme-multihazard">Theme →</a>
+          <a href="#pub-jse-2025-hatay">Hatay JSE 2025 →</a>
         </div>
       </article>
     </div>
@@ -695,7 +958,7 @@ footer {
     <div class="section-head">
       <p class="eyebrow">Selected publications</p>
       <h2>Recent journal work &amp; highlights</h2>
-      <p>Synced from CV (June 23, 2026). Full list on Google Scholar.</p>
+      <p>Synced from CV (June 23, 2026). Each entry links back to its <a href="#research" style="color:var(--teal);font-weight:600;text-decoration:underline">research theme</a> and <a href="#funding" style="color:var(--teal);font-weight:600;text-decoration:underline">funding</a> where relevant.</p>
     </div>
     <div class="pub-toolbar">
       <a class="btn btn-primary" style="background:var(--teal);color:#fff" href="https://scholar.google.com/citations?user=5jfQpTkAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar →</a>
@@ -703,106 +966,136 @@ footer {
     </div>
 
     <div class="pub-year"><h3>2026</h3>
-      <article class="pub">
+      <article class="pub" id="pub-ijdrr-2026-ghasemi">
         <div>
           <h4>Integrated Data Imputation of National Inventories for Bridging Information Gaps and Outcome Risk Uncertainty in Community Resilience Modeling</h4>
           <p class="authors">Ghasemi, S., Roohi, M., Sanderson, D., Sediek, O., &amp; van de Lindt, J.</p>
           <p class="venue">International Journal of Disaster Risk Reduction, 106077</p>
+          <p class="pub-theme">Theme: <a href="#theme-community">Inventory &amp; exposure UQ</a> · Funding: <a href="#fund-nist-incore">NIST / IN-CORE</a></p>
         </div>
         <a class="pub-doi" href="https://doi.org/10.1016/j.ijdrr.2026.106077" target="_blank" rel="noopener">DOI</a>
       </article>
-      <article class="pub">
+      <article class="pub" id="pub-nhr-2026-zannat">
         <div>
           <h4>Integrating ML-Based Reverse Engineering of CGE Models with Optimization for Enhancing Community Resilience</h4>
           <p class="authors">Zannat, N. T., Sen Gupta, H., Ghasemi, S., Nicholson, C. D., Cutler, H., González, A. D., &amp; Roohi, M.</p>
           <p class="venue">Natural Hazards Review (ASCE) — Accepted</p>
+          <p class="pub-theme">Theme: <a href="#theme-community">Community resilience</a> · Funding: <a href="#fund-nist-incore">NIST / related</a></p>
         </div>
         <span class="pub-doi">Accepted</span>
       </article>
     </div>
 
     <div class="pub-year"><h3>2025</h3>
-      <article class="pub">
+      <article class="pub" id="pub-jse-2025-hatay">
         <div>
           <h4>Hospital Network Resilience in Hatay Following the 2023 Cascading Earthquakes in Türkiye: A Year-Long Investigation</h4>
           <p class="authors">Roohi, M., Deniz, D., &amp; Cheraghzade, M.</p>
           <p class="venue">Journal of Structural Engineering, 151(5), 05025001</p>
           <span class="badge">Editor’s Choice</span>
+          <p class="pub-theme">Theme: <a href="#theme-multihazard">Cascading systems</a> · Funding: <a href="#fund-unmc">UNL–UNMC / community resilience</a></p>
         </div>
         <a class="pub-doi" href="https://doi.org/10.1061/JSENDH.STENG-13964" target="_blank" rel="noopener">DOI</a>
       </article>
     </div>
 
     <div class="pub-year"><h3>2024</h3>
-      <article class="pub">
+      <article class="pub" id="pub-rcns-2024">
         <div>
           <h4>Multi-disciplinary Seismic Resilience Modeling for Developing Mitigation Policies and Recovery Planning</h4>
           <p class="authors">Roohi, M., Ghasemi, S., Sediek, O., Jeon, H., van de Lindt, J. W., Shields, M., Hamideh, S., &amp; Cutler, H.</p>
           <p class="venue">Resilient Cities and Structures, 3(2), 66–84</p>
+          <p class="pub-theme">Theme: <a href="#theme-community">IN-CORE / FR</a> · Funding: <a href="#fund-nist-incore">NIST PREP</a></p>
         </div>
         <a class="pub-doi" href="https://doi.org/10.1016/j.rcns.2024.07.003" target="_blank" rel="noopener">DOI</a>
       </article>
-      <article class="pub">
+      <article class="pub" id="pub-ijdrr-2024-sediek">
         <div>
           <h4>A Genetic Algorithm Framework for Seismic Retrofit of Building Portfolios to Enhance Community Resilience</h4>
           <p class="authors">Sediek, O. A., Roohi, M., &amp; van de Lindt, J. W.</p>
           <p class="venue">International Journal of Disaster Risk Reduction, 104570</p>
+          <p class="pub-theme">Theme: <a href="#theme-community">Portfolio FR</a> · Funding: <a href="#fund-nist-incore">NIST / IN-CORE</a></p>
         </div>
         <a class="pub-doi" href="https://doi.org/10.1016/j.ijdrr.2024.104570" target="_blank" rel="noopener">DOI</a>
       </article>
-      <article class="pub">
+      <article class="pub" id="pub-risk-2024-sediek">
         <div>
           <h4>A Decision Support Methodology for Seismic Design Requirements of Buildings to Achieve Community-Level Resilience Metrics</h4>
           <p class="authors">Sediek, O. A., Roohi, M., &amp; van de Lindt, J. W.</p>
           <p class="venue">ASCE-ASME Journal of Risk and Uncertainty in Engineering Systems, Part A</p>
+          <p class="pub-theme">Theme: <a href="#theme-community">Portfolio FR</a> · Funding: <a href="#fund-nist-incore">NIST / IN-CORE</a></p>
         </div>
         <a class="pub-doi" href="https://doi.org/10.1061/AJRUA6.RUENG-1213" target="_blank" rel="noopener">DOI</a>
       </article>
-      <article class="pub">
+      <article class="pub" id="pub-sei-2024-makhoul">
         <div>
           <h4>Seismic Resilience of Interdependent Built Environment for Integrating Structural Health Monitoring and Emerging Technologies in Decision-Making</h4>
           <p class="authors">Makhoul, N., Roohi, M., van de Lindt, J. W., et al.</p>
           <p class="venue">Structural Engineering International, 34(1), 19–33</p>
           <span class="badge">IABSE Outstanding Paper 2025</span>
+          <p class="pub-theme">Theme: <a href="#theme-community">Open platforms</a> · <a href="#theme-multihazard">Cascading</a></p>
         </div>
         <a class="pub-doi" href="https://doi.org/10.1080/10168664.2023.2295901" target="_blank" rel="noopener">DOI</a>
       </article>
     </div>
 
     <div class="pub-year"><h3>Selected earlier</h3>
-      <article class="pub">
+      <article class="pub" id="pub-jobe-2022">
         <div>
           <h4>Deep Learning for Post-earthquake Structural Assessment by Accounting for Mechanics-Based Model Uncertainty</h4>
           <p class="authors">Cheraghzade, M., &amp; Roohi, M. (2022)</p>
           <p class="venue">Journal of Building Engineering, 57, 104837</p>
+          <p class="pub-theme">Theme: <a href="#theme-dt-shm">Digital twins &amp; SHM</a></p>
         </div>
         <a class="pub-doi" href="https://doi.org/10.1016/j.jobe.2022.104837" target="_blank" rel="noopener">DOI</a>
       </article>
-      <article class="pub">
+      <article class="pub" id="pub-jem-2021">
         <div>
           <h4>Reconstructing Element-by-Element Dissipated Hysteretic Energy in Instrumented Buildings: Application to the Van Nuys Hotel Testbed</h4>
           <p class="authors">Roohi, M., Hernandez, E. M., &amp; Rosowsky, D. V. (2021)</p>
           <p class="venue">Journal of Engineering Mechanics, 147(1), 04020141</p>
           <span class="badge">EOS OpenSees Award 2025</span>
+          <p class="pub-theme">Theme: <a href="#theme-dt-shm">Digital twins &amp; SHM</a> · Funding: <a href="#fund-nasa-epscor">NASA EPSCoR / SHM line</a></p>
         </div>
         <a class="pub-doi" href="https://doi.org/10.1061/(ASCE)EM.1943-7889.0001864" target="_blank" rel="noopener">DOI</a>
       </article>
-      <article class="pub">
+      <article class="pub" id="pub-mssp-2021">
         <div>
           <h4>An Extended Model-Based Observer for State Estimation in Nonlinear Hysteretic Structural Systems</h4>
           <p class="authors">Roohi, M., Erazo, K., Rosowsky, D. V., &amp; Hernandez, E. M. (2021)</p>
           <p class="venue">Mechanical Systems and Signal Processing, 146, 107015</p>
+          <p class="pub-theme">Theme: <a href="#theme-dt-shm">Digital twins &amp; SHM</a></p>
         </div>
         <a class="pub-doi" href="https://doi.org/10.1016/j.ymssp.2020.107015" target="_blank" rel="noopener">DOI</a>
       </article>
-      <article class="pub">
+      <article class="pub" id="pub-jcshm-2020">
         <div>
           <h4>Performance-Based Post-Earthquake Decision-Making for Instrumented Buildings</h4>
           <p class="authors">Roohi, M., &amp; Hernandez, E. M. (2020)</p>
           <p class="venue">Journal of Civil Structural Health Monitoring, 10(5), 775–792</p>
+          <p class="pub-theme">Theme: <a href="#theme-dt-shm">Digital twins &amp; SHM</a></p>
         </div>
         <a class="pub-doi" href="https://doi.org/10.1007/s13349-020-00416-1" target="_blank" rel="noopener">DOI</a>
       </article>
+      <article class="pub" id="pub-sie-2021">
+        <div>
+          <h4>Implication of Building Inventory Accuracy on Physical and Socio-economic Resilience Metrics for Informed Decision-Making in Natural Hazards</h4>
+          <p class="authors">Roohi, M., van de Lindt, J. W., Rosenheim, N., Hu, Y., &amp; Cutler, H. (2021)</p>
+          <p class="venue">Structure and Infrastructure Engineering, 17(4), 534–554</p>
+          <p class="pub-theme">Theme: <a href="#theme-community">Inventory &amp; exposure UQ</a> · Funding: <a href="#fund-nist-incore">NIST / IN-CORE</a></p>
+        </div>
+        <a class="pub-doi" href="https://doi.org/10.1080/15732479.2020.1845753" target="_blank" rel="noopener">DOI</a>
+      </article>
+      <article class="pub" id="pub-sri-2023">
+        <div>
+          <h4>Probabilistic Seismic Multi-Hazard Risk and Restoration Modeling for Resilience-Informed Decision Making in Railway Networks</h4>
+          <p class="authors">Farahani, S., Shojaeian, A., Behnam, B., &amp; Roohi, M. (2023)</p>
+          <p class="venue">Sustainable and Resilient Infrastructure, 8(5), 470–491</p>
+          <p class="pub-theme">Theme: <a href="#theme-networks">Network resilience</a></p>
+        </div>
+        <a class="pub-doi" href="https://doi.org/10.1080/23789689.2023.2170090" target="_blank" rel="noopener">DOI</a>
+      </article>
+
     </div>
   </div>
 </section>
