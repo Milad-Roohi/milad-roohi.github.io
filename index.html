@@ -23,6 +23,10 @@
   --star: #f0c75e;
   --teal: #1a7a8c;
   --teal-deep: #0f5a68;
+  --active: #1f7a4d;
+  --active-bg: rgba(31,122,77,0.12);
+  --emerging: #2a5f9e;
+  --emerging-bg: rgba(42,95,158,0.12);
   --max: 1080px;
   --radius: 14px;
 }
@@ -43,9 +47,15 @@ a { color: inherit; text-decoration: none; }
 /* ── Nav ── */
 .site-nav {
   position: sticky; top: 0; z-index: 50;
-  backdrop-filter: blur(14px);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   background: rgba(11, 26, 46, 0.88);
   border-bottom: 1px solid rgba(255,255,255,0.08);
+  transition: box-shadow 0.2s ease, background 0.2s ease;
+}
+.site-nav.is-scrolled {
+  background: rgba(11, 26, 46, 0.96);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.28);
 }
 .nav-inner {
   display: flex; align-items: center; justify-content: space-between;
@@ -101,6 +111,23 @@ a { color: inherit; text-decoration: none; }
   opacity: 0.18;
   pointer-events: none;
 }
+.hero-visual {
+  position: absolute;
+  right: -4%;
+  top: 8%;
+  width: min(46vw, 520px);
+  height: 78%;
+  opacity: 0.45;
+  pointer-events: none;
+  z-index: 0;
+}
+.hero-visual svg { width: 100%; height: 100%; }
+@keyframes drift {
+  0%, 100% { transform: translateY(0); opacity: 0.55; }
+  50% { transform: translateY(-8px); opacity: 0.85; }
+}
+.hero-visual .pulse { animation: drift 5.5s ease-in-out infinite; }
+.hero-visual .pulse-2 { animation: drift 7s ease-in-out infinite 0.8s; }
 .hero-grid {
   position: relative; z-index: 1;
   display: grid;
@@ -206,15 +233,42 @@ section { padding: 4.5rem 0; }
 
 /* Research spine */
 .research-list { display: grid; gap: 0; }
+.research-categories { display: grid; gap: 1.25rem; }
+.research-cat {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.35rem 1.4rem 0.35rem;
+  transition: border-color 0.18s, box-shadow 0.18s, transform 0.18s;
+}
+.research-cat:hover {
+  border-color: rgba(26,122,140,0.35);
+  box-shadow: 0 14px 36px rgba(15,28,46,0.08);
+  transform: translateY(-2px);
+}
+.research-cat-head {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: 0.75rem; margin-bottom: 0.35rem;
+}
+.research-cat-head h3 {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.35rem; font-weight: 600; letter-spacing: -0.01em;
+}
+.research-cat > p.cat-lead { color: var(--muted); font-size: 0.95rem; margin-bottom: 0.5rem; max-width: 62ch; }
 .research-item {
   display: grid;
-  grid-template-columns: 4.5rem 1fr auto;
-  gap: 1.25rem;
+  grid-template-columns: 3.25rem 1fr auto;
+  gap: 1rem;
   align-items: start;
-  padding: 1.35rem 0;
+  padding: 1.05rem 0;
   border-bottom: 1px solid var(--line);
+  border-radius: 8px;
+  margin: 0 -0.35rem;
+  padding-left: 0.35rem; padding-right: 0.35rem;
+  transition: background 0.15s, border-color 0.15s;
 }
-.research-item:first-child { border-top: 1px solid var(--line); }
+.research-item:last-child { border-bottom: 0; }
+.research-item:hover { background: rgba(26,122,140,0.04); }
 .r-num {
   font-family: "JetBrains Mono", monospace;
   font-size: 0.85rem;
@@ -237,14 +291,45 @@ section { padding: 4.5rem 0; }
   padding: 0.2rem 0.55rem;
   border-radius: 999px;
 }
-.r-link {
+.status-pill {
   font-family: "JetBrains Mono", monospace;
-  font-size: 0.72rem;
-  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   white-space: nowrap;
-  padding-top: 0.35rem;
+  padding: 0.28rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
 }
-.research-item:hover .r-link { color: var(--teal); }
+.status-pill.active {
+  color: var(--active);
+  background: var(--active-bg);
+  border-color: rgba(31,122,77,0.22);
+}
+.status-pill.emerging {
+  color: var(--emerging);
+  background: var(--emerging-bg);
+  border-color: rgba(42,95,158,0.22);
+}
+.open-links {
+  display: flex; flex-wrap: wrap; gap: 0.55rem;
+  margin: 0.9rem 0 1.1rem;
+}
+.open-links a {
+  font-size: 0.8rem; font-weight: 600;
+  color: var(--teal-deep);
+  background: rgba(26,122,140,0.08);
+  border: 1px solid rgba(26,122,140,0.2);
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  transition: background 0.15s, border-color 0.15s, transform 0.15s;
+}
+.open-links a:hover {
+  background: rgba(26,122,140,0.14);
+  border-color: var(--teal);
+  transform: translateY(-1px);
+}
 
 /* Pubs */
 .pub-toolbar {
@@ -263,8 +348,15 @@ section { padding: 4.5rem 0; }
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 1rem;
-  padding: 1rem 0;
+  padding: 1rem 0.85rem;
+  margin: 0 -0.85rem;
   border-bottom: 1px solid var(--line);
+  border-radius: 10px;
+  transition: background 0.15s, box-shadow 0.15s, transform 0.15s;
+}
+.pub:hover {
+  background: rgba(26,122,140,0.04);
+  box-shadow: inset 3px 0 0 var(--teal);
 }
 .pub h4 { font-size: 1rem; font-weight: 600; line-height: 1.4; }
 .pub .authors { color: var(--muted); font-size: 0.88rem; margin-top: 0.25rem; }
@@ -364,7 +456,17 @@ section { padding: 4.5rem 0; }
   font-size: 1.7rem;
   font-weight: 600;
 }
-.join p { color: var(--muted); margin-top: 0.5rem; max-width: 48ch; }
+.join p { color: var(--muted); margin-top: 0.5rem; max-width: 52ch; }
+.join .hiring {
+  display: inline-block;
+  margin-top: 0.85rem;
+  font-size: 0.82rem; font-weight: 700;
+  color: var(--active);
+  background: var(--active-bg);
+  border: 1px solid rgba(31,122,77,0.22);
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+}
 .join .btn-primary { background: var(--teal); color: #fff; }
 .join .btn-primary:hover { background: var(--teal-deep); }
 
@@ -384,8 +486,8 @@ footer {
 @media (max-width: 860px) {
   .hero-grid, .about-grid, .join, .news-grid { grid-template-columns: 1fr; }
   .stats { grid-template-columns: repeat(2, 1fr); }
-  .research-item { grid-template-columns: 3rem 1fr; }
-  .r-link { display: none; }
+  .research-item { grid-template-columns: 2.5rem 1fr; }
+  .status-pill { align-self: start; }
   .nav-links { display: none; }
   .nav-links.open {
     display: flex; flex-direction: column;
@@ -418,6 +520,27 @@ footer {
 </nav>
 
 <header class="hero" id="top">
+  <div class="hero-visual" aria-hidden="true">
+    <svg viewBox="0 0 560 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g stroke="rgba(240,199,94,0.35)" stroke-width="1.2">
+        <path d="M80 300 L160 220 L240 260 L320 160 L400 210 L480 120"/>
+        <path d="M140 340 L220 280 L300 310 L380 240 L460 270"/>
+      </g>
+      <g class="pulse">
+        <rect x="150" y="210" width="28" height="46" rx="3" fill="rgba(26,122,140,0.55)" stroke="rgba(240,199,94,0.7)"/>
+        <rect x="188" y="190" width="24" height="66" rx="3" fill="rgba(26,122,140,0.4)" stroke="rgba(255,255,255,0.35)"/>
+        <rect x="222" y="230" width="30" height="26" rx="3" fill="rgba(240,199,94,0.35)" stroke="rgba(240,199,94,0.65)"/>
+      </g>
+      <g class="pulse-2">
+        <circle cx="320" cy="160" r="7" fill="#f0c75e"/>
+        <circle cx="400" cy="210" r="5" fill="rgba(255,255,255,0.8)"/>
+        <circle cx="240" cy="260" r="5" fill="rgba(26,122,140,0.9)"/>
+        <circle cx="480" cy="120" r="6" fill="#f0c75e"/>
+      </g>
+      <path d="M300 140 C360 100, 420 130, 450 90" stroke="rgba(255,255,255,0.25)" stroke-dasharray="4 6"/>
+      <text x="330" y="78" fill="rgba(240,199,94,0.75)" font-family="JetBrains Mono, monospace" font-size="11">digital twin · hazard graph</text>
+    </svg>
+  </div>
   <div class="container">
     <div class="hero-grid">
       <div>
@@ -458,81 +581,110 @@ footer {
     <div class="section-head">
       <p class="eyebrow">Research themes</p>
       <h2>From instrumented buildings to community recovery</h2>
-      <p>Programs span asset digital twins, portfolio functional recovery, inventory uncertainty, extreme wind, and open resilience platforms.</p>
+      <p>Four focus areas organize the lab’s programs—from asset digital twins to multi-hazard community systems and open platforms.</p>
     </div>
 
-    <div class="research-list">
-      <article class="research-item">
-        <div class="r-num">01</div>
-        <div>
-          <h3>Asset digital twins &amp; SHM</h3>
-          <p>Physics-based observers and model–data fusion for instrumented buildings—damage, energy, and decision support when sensing is sparse.</p>
-          <div class="tag-row"><span class="tag">Observers</span><span class="tag">PBEE</span><span class="tag">NEESWood</span></div>
+    <div class="research-categories">
+      <article class="research-cat">
+        <div class="research-cat-head">
+          <h3>Digital twins &amp; structural health</h3>
+          <span class="status-pill active">Active</span>
         </div>
-        <div class="r-link">Active</div>
+        <p class="cat-lead">Physics-based observers and model–data fusion for instrumented buildings when sensing is sparse.</p>
+        <div class="research-item">
+          <div class="r-num">01</div>
+          <div>
+            <h3>Asset digital twins &amp; SHM</h3>
+            <p>Damage, energy, and decision support via Bayesian / Kalman observers, PBEE-consistent post-event assessment, and NEESWood / CSMIP validation.</p>
+            <div class="tag-row"><span class="tag">Observers</span><span class="tag">PBEE</span><span class="tag">NEESWood</span></div>
+          </div>
+        </div>
       </article>
-      <article class="research-item">
-        <div class="r-num">02</div>
-        <div>
-          <h3>Portfolio Bayesian updating &amp; functional recovery</h3>
-          <p>From uncertain inventories to community functional-recovery metrics and retrofit prioritization under seismic and multi-hazard risk.</p>
-          <div class="tag-row"><span class="tag">CAREER thrust</span><span class="tag">IN-CORE</span><span class="tag">FR</span></div>
+
+      <article class="research-cat">
+        <div class="research-cat-head">
+          <h3>Community resilience &amp; open platforms</h3>
+          <span class="status-pill active">Active</span>
         </div>
-        <div class="r-link">Active</div>
+        <p class="cat-lead">Portfolio functional recovery, inventory uncertainty, and open tools planners can actually run.</p>
+        <div class="open-links">
+          <a href="https://tools.in-core.org/" target="_blank" rel="noopener">IN-CORE tools →</a>
+          <a href="https://tools.in-core.org/doc/incore/introduction.html" target="_blank" rel="noopener">IN-CORE docs →</a>
+          <a href="https://github.com/IN-CORE" target="_blank" rel="noopener">IN-CORE on GitHub →</a>
+        </div>
+        <div class="research-item">
+          <div class="r-num">02</div>
+          <div>
+            <h3>Portfolio Bayesian updating &amp; functional recovery</h3>
+            <p>From uncertain inventories to community FR metrics and retrofit prioritization under seismic and multi-hazard risk.</p>
+            <div class="tag-row"><span class="tag">CAREER thrust</span><span class="tag">FR</span></div>
+          </div>
+        </div>
+        <div class="research-item">
+          <div class="r-num">03</div>
+          <div>
+            <h3>Building inventory &amp; exposure UQ</h3>
+            <p>ML and Bayesian imputation so resilience metrics are not dominated by missing national inventory attributes.</p>
+            <div class="tag-row"><span class="tag">Imputation</span><span class="tag">Epistemic UQ</span></div>
+          </div>
+        </div>
+        <div class="research-item">
+          <div class="r-num">04</div>
+          <div>
+            <h3>IN-CORE &amp; open resilience platforms</h3>
+            <p>Use-inspired testbeds and NSF POSE open-source ecosystem work so community models become decision tools.</p>
+            <div class="tag-row"><span class="tag">POSE II</span><span class="tag">NIST</span></div>
+          </div>
+        </div>
       </article>
-      <article class="research-item">
-        <div class="r-num">03</div>
-        <div>
-          <h3>Building inventory &amp; exposure UQ</h3>
-          <p>ML and Bayesian methods to close national inventory gaps so resilience metrics are not dominated by missing attributes.</p>
-          <div class="tag-row"><span class="tag">Imputation</span><span class="tag">Epistemic UQ</span></div>
+
+      <article class="research-cat">
+        <div class="research-cat-head">
+          <h3>Multi-hazard community systems</h3>
+          <span class="status-pill active">Active</span>
         </div>
-        <div class="r-link">Active</div>
+        <p class="cat-lead">Tornado / extreme wind, cascading lifelines, and equity-centered community decision support.</p>
+        <div class="research-item">
+          <div class="r-num">05</div>
+          <div>
+            <h3>Tornado &amp; extreme-wind resilience</h3>
+            <p>Hazard-faithful wind/tornado community models and equity-centered planning for Plains and tribal communities.</p>
+            <div class="tag-row"><span class="tag">NSF CIVIC</span><span class="tag">Hindcasting</span></div>
+          </div>
+        </div>
+        <div class="research-item">
+          <div class="r-num">06</div>
+          <div>
+            <h3>Cascading multi-system consequences</h3>
+            <p>Hospitals, lifelines, and services failing and recovering together—including year-long Hatay investigation after the 2023 Türkiye earthquakes.</p>
+            <div class="tag-row"><span class="tag">Editor’s Choice</span><span class="tag">Healthcare</span></div>
+            <span class="status-pill emerging" style="margin-top:0.65rem;display:inline-block">Emerging</span>
+          </div>
+        </div>
       </article>
-      <article class="research-item">
-        <div class="r-num">04</div>
-        <div>
-          <h3>Tornado &amp; extreme-wind resilience</h3>
-          <p>Hazard-faithful wind/tornado community models and equity-centered decision support for Plains and tribal communities.</p>
-          <div class="tag-row"><span class="tag">NSF CIVIC</span><span class="tag">Hindcasting</span></div>
+
+      <article class="research-cat">
+        <div class="research-cat-head">
+          <h3>Networks &amp; emerging hazards</h3>
+          <span class="status-pill emerging">Emerging</span>
         </div>
-        <div class="r-link">Active</div>
-      </article>
-      <article class="research-item">
-        <div class="r-num">05</div>
-        <div>
-          <h3>IN-CORE &amp; open resilience platforms</h3>
-          <p>Use-inspired community testbeds and open-source ecosystem work so models become tools planners can run.</p>
-          <div class="tag-row"><span class="tag">POSE II</span><span class="tag">NIST</span></div>
+        <p class="cat-lead">Transportation networks under flood/climate stress and incubating wildfire community resilience.</p>
+        <div class="research-item">
+          <div class="r-num">07</div>
+          <div>
+            <h3>Network &amp; transportation resilience</h3>
+            <p>Bridge and network performance under flood, seismic, and climate stressors, linked to community outcomes.</p>
+            <div class="tag-row"><span class="tag">NDOT</span><span class="tag">MATC</span></div>
+          </div>
         </div>
-        <div class="r-link">Active</div>
-      </article>
-      <article class="research-item">
-        <div class="r-num">06</div>
-        <div>
-          <h3>Cascading multi-system consequences</h3>
-          <p>How hospitals, lifelines, and services fail and recover together—including year-long investigation after the 2023 Türkiye earthquakes.</p>
-          <div class="tag-row"><span class="tag">Editor’s Choice</span><span class="tag">Healthcare</span></div>
+        <div class="research-item">
+          <div class="r-num">08</div>
+          <div>
+            <h3>Wildfire community resilience</h3>
+            <p>Emerging line on wildfire exposure, community systems, and decision support for Plains / Midwest contexts.</p>
+            <div class="tag-row"><span class="tag">Incubating</span></div>
+          </div>
         </div>
-        <div class="r-link">Emerging</div>
-      </article>
-      <article class="research-item">
-        <div class="r-num">07</div>
-        <div>
-          <h3>Network &amp; transportation resilience</h3>
-          <p>Bridge and network performance under flood, seismic, and climate stressors, linked to community outcomes.</p>
-          <div class="tag-row"><span class="tag">NDOT</span><span class="tag">MATC</span></div>
-        </div>
-        <div class="r-link">Emerging</div>
-      </article>
-      <article class="research-item">
-        <div class="r-num">08</div>
-        <div>
-          <h3>Wildfire community resilience</h3>
-          <p>Emerging line on wildfire exposure, community systems, and decision support for Plains / Midwest contexts.</p>
-          <div class="tag-row"><span class="tag">Incubating</span></div>
-        </div>
-        <div class="r-link">Emerging</div>
       </article>
     </div>
   </div>
@@ -729,6 +881,7 @@ footer {
           digital twins, sensing, and decision support. Email with subject
           <strong>Prospective Student – LAST NAME</strong> and one PDF: CV, unofficial transcripts, and a short research statement.
         </p>
+        <p class="hiring">Actively recruiting — inquire about currently funded Ph.D. openings and start terms</p>
       </div>
       <a class="btn btn-primary" href="mailto:milad.roohi@unl.edu?subject=Prospective%20Student%20%E2%80%93%20">Email Dr. Roohi →</a>
     </div>
@@ -751,8 +904,12 @@ footer {
   document.getElementById('y').textContent = new Date().getFullYear();
   const toggle = document.getElementById('navToggle');
   const links = document.getElementById('navLinks');
+  const nav = document.querySelector('.site-nav');
   toggle.addEventListener('click', () => links.classList.toggle('open'));
   links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+  const onScroll = () => nav.classList.toggle('is-scrolled', window.scrollY > 12);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
 </script>
 </body>
 </html>
