@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SiRIUS Lab — Smart Resilient Infrastructure and Urban Systems at the University of Nebraska–Lincoln, directed by Dr. Milad Roohi. Digital twins, multi-hazard resilience, and decision support.">
+<meta name="author" content="Milad Roohi">
+<title>SiRIUS Lab · Milad Roohi · University of Nebraska–Lincoln</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0f1c2e;
+  --ink-soft: #2a3b52;
+  --muted: #5c6b7e;
+  --line: #d5dde8;
+  --paper: #f3f6fa;
+  --white: #ffffff;
+  --panel: #e8eef5;
+  --navy: #0b1a2e;
+  --navy-2: #13283f;
+  --star: #f0c75e;
+  --teal: #1a7a8c;
+  --teal-deep: #0f5a68;
+  --max: 1080px;
+  --radius: 14px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: "Manrope", system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+.container { width: min(100% - 2.5rem, var(--max)); margin-inline: auto; }
+
+/* ── Nav ── */
+.site-nav {
+  position: sticky; top: 0; z-index: 50;
+  backdrop-filter: blur(14px);
+  background: rgba(11, 26, 46, 0.88);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.nav-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px;
+}
+.brand {
+  display: flex; align-items: center; gap: 0.7rem;
+  color: #fff; font-weight: 700; letter-spacing: 0.02em;
+}
+.brand-mark {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #fff7d6 0%, var(--star) 28%, transparent 29%),
+              radial-gradient(circle at 70% 60%, rgba(255,255,255,0.55) 0 1.5px, transparent 2px),
+              linear-gradient(145deg, var(--teal), var(--navy-2));
+  box-shadow: 0 0 0 1px rgba(240,199,94,0.35);
+}
+.brand span { font-size: 0.95rem; }
+.nav-links { display: flex; gap: 1.25rem; align-items: center; }
+.nav-links a {
+  color: rgba(255,255,255,0.72);
+  font-size: 0.88rem; font-weight: 500;
+  transition: color 0.15s;
+}
+.nav-links a:hover { color: #fff; }
+.nav-cta {
+  background: var(--star) !important;
+  color: var(--navy) !important;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  font-weight: 700 !important;
+  font-size: 0.82rem !important;
+}
+.nav-toggle {
+  display: none; background: none; border: 0; color: #fff; font-size: 1.4rem; cursor: pointer;
+}
+
+/* ── Hero ── */
+.hero {
+  background:
+    radial-gradient(ellipse 80% 60% at 85% 15%, rgba(240,199,94,0.18), transparent 55%),
+    radial-gradient(ellipse 50% 40% at 10% 80%, rgba(26,122,140,0.28), transparent 50%),
+    linear-gradient(165deg, var(--navy) 0%, var(--navy-2) 55%, #16324d 100%);
+  color: #fff;
+  padding: 4.5rem 0 3.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.hero::after {
+  content: "";
+  position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.22) 0.7px, transparent 0.8px);
+  background-size: 28px 28px;
+  opacity: 0.18;
+  pointer-events: none;
+}
+.hero-grid {
+  position: relative; z-index: 1;
+  display: grid;
+  grid-template-columns: 1.35fr 0.85fr;
+  gap: 2.5rem;
+  align-items: end;
+}
+.kicker {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--star);
+  margin-bottom: 1rem;
+}
+.hero h1 {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  max-width: 14ch;
+}
+.hero-lead {
+  margin-top: 1.25rem;
+  color: rgba(255,255,255,0.78);
+  font-size: 1.05rem;
+  max-width: 42ch;
+}
+.hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.75rem; }
+.btn {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  padding: 0.7rem 1.1rem;
+  border-radius: 999px;
+  font-weight: 600; font-size: 0.9rem;
+  border: 1px solid transparent;
+  transition: transform 0.15s, background 0.15s, border-color 0.15s;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn-primary { background: var(--star); color: var(--navy); }
+.btn-ghost { border-color: rgba(255,255,255,0.28); color: #fff; }
+.btn-ghost:hover { border-color: #fff; background: rgba(255,255,255,0.06); }
+
+.hero-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  backdrop-filter: blur(8px);
+}
+.hero-card img {
+  width: 112px; height: 112px; border-radius: 50%;
+  object-fit: cover; margin-bottom: 1rem;
+  border: 2px solid rgba(240,199,94,0.55);
+}
+.hero-card h2 {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.35rem; font-weight: 600;
+}
+.hero-card .role { color: rgba(255,255,255,0.7); font-size: 0.9rem; margin: 0.35rem 0 0.9rem; }
+.hero-meta { display: grid; gap: 0.45rem; font-size: 0.85rem; color: rgba(255,255,255,0.78); }
+.hero-meta a { color: var(--star); text-decoration: underline; text-underline-offset: 2px; }
+
+.stats {
+  position: relative; z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 2.75rem;
+}
+.stat {
+  border-top: 1px solid rgba(255,255,255,0.18);
+  padding-top: 0.9rem;
+}
+.stat strong {
+  display: block;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.85rem;
+  color: var(--star);
+  line-height: 1;
+}
+.stat span { font-size: 0.8rem; color: rgba(255,255,255,0.65); }
+
+/* ── Sections ── */
+section { padding: 4.5rem 0; }
+.section-head { margin-bottom: 2rem; max-width: 40rem; }
+.eyebrow {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 0.55rem;
+}
+.section-head h2 {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+.section-head p { margin-top: 0.75rem; color: var(--muted); }
+
+/* Research spine */
+.research-list { display: grid; gap: 0; }
+.research-item {
+  display: grid;
+  grid-template-columns: 4.5rem 1fr auto;
+  gap: 1.25rem;
+  align-items: start;
+  padding: 1.35rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.research-item:first-child { border-top: 1px solid var(--line); }
+.r-num {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.85rem;
+  color: var(--teal);
+  padding-top: 0.25rem;
+}
+.research-item h3 {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+.research-item p { color: var(--ink-soft); font-size: 0.95rem; max-width: 58ch; }
+.tag-row { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.7rem; }
+.tag {
+  font-size: 0.72rem; font-weight: 600;
+  color: var(--teal-deep);
+  background: rgba(26,122,140,0.1);
+  border: 1px solid rgba(26,122,140,0.18);
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+}
+.r-link {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  color: var(--muted);
+  white-space: nowrap;
+  padding-top: 0.35rem;
+}
+.research-item:hover .r-link { color: var(--teal); }
+
+/* Pubs */
+.pub-toolbar {
+  display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center;
+  justify-content: space-between; margin-bottom: 1.5rem;
+}
+.pub-year { margin-top: 1.75rem; }
+.pub-year h3 {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  color: var(--teal);
+  margin-bottom: 0.75rem;
+}
+.pub {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.pub h4 { font-size: 1rem; font-weight: 600; line-height: 1.4; }
+.pub .authors { color: var(--muted); font-size: 0.88rem; margin-top: 0.25rem; }
+.pub .venue { color: var(--ink-soft); font-size: 0.88rem; margin-top: 0.2rem; font-style: italic; }
+.badge {
+  display: inline-block;
+  margin-top: 0.45rem;
+  font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--navy);
+  background: var(--star);
+  padding: 0.18rem 0.5rem;
+  border-radius: 4px;
+}
+.pub-doi {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  color: var(--teal);
+  align-self: start;
+  padding-top: 0.2rem;
+}
+
+/* News */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+.news-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.35rem;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.news-card:hover {
+  border-color: rgba(26,122,140,0.35);
+  box-shadow: 0 10px 28px rgba(15,28,46,0.06);
+}
+.news-card .when {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.news-card h3 { font-size: 1.05rem; margin: 0.45rem 0 0.35rem; font-weight: 700; }
+.news-card p { color: var(--ink-soft); font-size: 0.9rem; }
+
+/* About band */
+.about-band {
+  background: var(--navy);
+  color: #fff;
+  padding: 4.5rem 0;
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+.about-band h2 {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(1.8rem, 3vw, 2.3rem);
+  font-weight: 600;
+}
+.about-band p { color: rgba(255,255,255,0.78); margin-top: 1rem; }
+.about-list { margin-top: 1.25rem; display: grid; gap: 0.55rem; }
+.about-list li {
+  list-style: none;
+  padding-left: 1rem;
+  position: relative;
+  color: rgba(255,255,255,0.82);
+  font-size: 0.95rem;
+}
+.about-list li::before {
+  content: "";
+  position: absolute; left: 0; top: 0.55rem;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--star);
+}
+
+/* Join */
+.join {
+  background: linear-gradient(135deg, var(--panel), var(--white));
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) + 4px);
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1.4fr auto;
+  gap: 1.5rem;
+  align-items: center;
+}
+.join h2 {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+.join p { color: var(--muted); margin-top: 0.5rem; max-width: 48ch; }
+.join .btn-primary { background: var(--teal); color: #fff; }
+.join .btn-primary:hover { background: var(--teal-deep); }
+
+footer {
+  padding: 2.5rem 0 3rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+.footer-inner {
+  display: flex; flex-wrap: wrap; gap: 1rem;
+  justify-content: space-between; align-items: center;
+}
+.footer-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+.footer-links a:hover { color: var(--teal); }
+
+@media (max-width: 860px) {
+  .hero-grid, .about-grid, .join, .news-grid { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .research-item { grid-template-columns: 3rem 1fr; }
+  .r-link { display: none; }
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex; flex-direction: column;
+    position: absolute; top: 64px; left: 0; right: 0;
+    background: var(--navy); padding: 1rem 1.25rem 1.25rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .nav-toggle { display: block; }
+  .pub { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>SiRIUS Lab</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#news">News</a>
+      <a href="#about">About</a>
+      <a class="nav-cta" href="#join">Join</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <p class="kicker">University of Nebraska–Lincoln · Durham School</p>
+        <h1>Smart Resilient Infrastructure &amp; Urban Systems</h1>
+        <p class="hero-lead">
+          Digital twins, sensing, and decision support for communities facing earthquakes,
+          extreme wind, flooding, fire, and climate-driven hazards.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#research">Explore research</a>
+          <a class="btn btn-ghost" href="https://sirius.unl.edu/" target="_blank" rel="noopener">UNL lab site →</a>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <img src="assets/milad-roohi.jpg" alt="Portrait of Milad Roohi" width="112" height="112">
+        <h2>Milad Roohi, Ph.D.</h2>
+        <p class="role">Assistant Professor · Director, SiRIUS Lab<br>College of Engineering Teaching Fellow</p>
+        <div class="hero-meta">
+          <div><a href="mailto:milad.roohi@unl.edu">milad.roohi@unl.edu</a></div>
+          <div><a href="https://scholar.google.com/citations?user=5jfQpTkAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a> · <a href="https://orcid.org/0000-0002-8937-3158" target="_blank" rel="noopener">ORCID</a></div>
+          <div>Chair, ASCE Objective Resilience Committee</div>
+        </div>
+      </aside>
+    </div>
+
+    <div class="stats" aria-label="Lab snapshot">
+      <div class="stat"><strong>52</strong><span>works (print &amp; in review)</span></div>
+      <div class="stat"><strong>430</strong><span>citations (Scholar, Jun 2026)</span></div>
+      <div class="stat"><strong>11</strong><span>h-index</span></div>
+      <div class="stat"><strong>80</strong><span>professional presentations</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="research">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Research themes</p>
+      <h2>From instrumented buildings to community recovery</h2>
+      <p>Programs span asset digital twins, portfolio functional recovery, inventory uncertainty, extreme wind, and open resilience platforms.</p>
+    </div>
+
+    <div class="research-list">
+      <article class="research-item">
+        <div class="r-num">01</div>
+        <div>
+          <h3>Asset digital twins &amp; SHM</h3>
+          <p>Physics-based observers and model–data fusion for instrumented buildings—damage, energy, and decision support when sensing is sparse.</p>
+          <div class="tag-row"><span class="tag">Observers</span><span class="tag">PBEE</span><span class="tag">NEESWood</span></div>
+        </div>
+        <div class="r-link">Active</div>
+      </article>
+      <article class="research-item">
+        <div class="r-num">02</div>
+        <div>
+          <h3>Portfolio Bayesian updating &amp; functional recovery</h3>
+          <p>From uncertain inventories to community functional-recovery metrics and retrofit prioritization under seismic and multi-hazard risk.</p>
+          <div class="tag-row"><span class="tag">CAREER thrust</span><span class="tag">IN-CORE</span><span class="tag">FR</span></div>
+        </div>
+        <div class="r-link">Active</div>
+      </article>
+      <article class="research-item">
+        <div class="r-num">03</div>
+        <div>
+          <h3>Building inventory &amp; exposure UQ</h3>
+          <p>ML and Bayesian methods to close national inventory gaps so resilience metrics are not dominated by missing attributes.</p>
+          <div class="tag-row"><span class="tag">Imputation</span><span class="tag">Epistemic UQ</span></div>
+        </div>
+        <div class="r-link">Active</div>
+      </article>
+      <article class="research-item">
+        <div class="r-num">04</div>
+        <div>
+          <h3>Tornado &amp; extreme-wind resilience</h3>
+          <p>Hazard-faithful wind/tornado community models and equity-centered decision support for Plains and tribal communities.</p>
+          <div class="tag-row"><span class="tag">NSF CIVIC</span><span class="tag">Hindcasting</span></div>
+        </div>
+        <div class="r-link">Active</div>
+      </article>
+      <article class="research-item">
+        <div class="r-num">05</div>
+        <div>
+          <h3>IN-CORE &amp; open resilience platforms</h3>
+          <p>Use-inspired community testbeds and open-source ecosystem work so models become tools planners can run.</p>
+          <div class="tag-row"><span class="tag">POSE II</span><span class="tag">NIST</span></div>
+        </div>
+        <div class="r-link">Active</div>
+      </article>
+      <article class="research-item">
+        <div class="r-num">06</div>
+        <div>
+          <h3>Cascading multi-system consequences</h3>
+          <p>How hospitals, lifelines, and services fail and recover together—including year-long investigation after the 2023 Türkiye earthquakes.</p>
+          <div class="tag-row"><span class="tag">Editor’s Choice</span><span class="tag">Healthcare</span></div>
+        </div>
+        <div class="r-link">Emerging</div>
+      </article>
+      <article class="research-item">
+        <div class="r-num">07</div>
+        <div>
+          <h3>Network &amp; transportation resilience</h3>
+          <p>Bridge and network performance under flood, seismic, and climate stressors, linked to community outcomes.</p>
+          <div class="tag-row"><span class="tag">NDOT</span><span class="tag">MATC</span></div>
+        </div>
+        <div class="r-link">Emerging</div>
+      </article>
+      <article class="research-item">
+        <div class="r-num">08</div>
+        <div>
+          <h3>Wildfire community resilience</h3>
+          <p>Emerging line on wildfire exposure, community systems, and decision support for Plains / Midwest contexts.</p>
+          <div class="tag-row"><span class="tag">Incubating</span></div>
+        </div>
+        <div class="r-link">Emerging</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="publications" style="background:var(--white); border-block:1px solid var(--line);">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Selected publications</p>
+      <h2>Recent journal work &amp; highlights</h2>
+      <p>Synced from CV (June 23, 2026). Full list on Google Scholar.</p>
+    </div>
+    <div class="pub-toolbar">
+      <a class="btn btn-primary" style="background:var(--teal);color:#fff" href="https://scholar.google.com/citations?user=5jfQpTkAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar →</a>
+      <a class="btn" style="border:1px solid var(--line)" href="https://sirius.unl.edu/publications/" target="_blank" rel="noopener">Lab publications page</a>
+    </div>
+
+    <div class="pub-year"><h3>2026</h3>
+      <article class="pub">
+        <div>
+          <h4>Integrated Data Imputation of National Inventories for Bridging Information Gaps and Outcome Risk Uncertainty in Community Resilience Modeling</h4>
+          <p class="authors">Ghasemi, S., Roohi, M., Sanderson, D., Sediek, O., &amp; van de Lindt, J.</p>
+          <p class="venue">International Journal of Disaster Risk Reduction, 106077</p>
+        </div>
+        <a class="pub-doi" href="https://doi.org/10.1016/j.ijdrr.2026.106077" target="_blank" rel="noopener">DOI</a>
+      </article>
+      <article class="pub">
+        <div>
+          <h4>Integrating ML-Based Reverse Engineering of CGE Models with Optimization for Enhancing Community Resilience</h4>
+          <p class="authors">Zannat, N. T., Sen Gupta, H., Ghasemi, S., Nicholson, C. D., Cutler, H., González, A. D., &amp; Roohi, M.</p>
+          <p class="venue">Natural Hazards Review (ASCE) — Accepted</p>
+        </div>
+        <span class="pub-doi">Accepted</span>
+      </article>
+    </div>
+
+    <div class="pub-year"><h3>2025</h3>
+      <article class="pub">
+        <div>
+          <h4>Hospital Network Resilience in Hatay Following the 2023 Cascading Earthquakes in Türkiye: A Year-Long Investigation</h4>
+          <p class="authors">Roohi, M., Deniz, D., &amp; Cheraghzade, M.</p>
+          <p class="venue">Journal of Structural Engineering, 151(5), 05025001</p>
+          <span class="badge">Editor’s Choice</span>
+        </div>
+        <a class="pub-doi" href="https://doi.org/10.1061/JSENDH.STENG-13964" target="_blank" rel="noopener">DOI</a>
+      </article>
+    </div>
+
+    <div class="pub-year"><h3>2024</h3>
+      <article class="pub">
+        <div>
+          <h4>Multi-disciplinary Seismic Resilience Modeling for Developing Mitigation Policies and Recovery Planning</h4>
+          <p class="authors">Roohi, M., Ghasemi, S., Sediek, O., Jeon, H., van de Lindt, J. W., Shields, M., Hamideh, S., &amp; Cutler, H.</p>
+          <p class="venue">Resilient Cities and Structures, 3(2), 66–84</p>
+        </div>
+        <a class="pub-doi" href="https://doi.org/10.1016/j.rcns.2024.07.003" target="_blank" rel="noopener">DOI</a>
+      </article>
+      <article class="pub">
+        <div>
+          <h4>A Genetic Algorithm Framework for Seismic Retrofit of Building Portfolios to Enhance Community Resilience</h4>
+          <p class="authors">Sediek, O. A., Roohi, M., &amp; van de Lindt, J. W.</p>
+          <p class="venue">International Journal of Disaster Risk Reduction, 104570</p>
+        </div>
+        <a class="pub-doi" href="https://doi.org/10.1016/j.ijdrr.2024.104570" target="_blank" rel="noopener">DOI</a>
+      </article>
+      <article class="pub">
+        <div>
+          <h4>A Decision Support Methodology for Seismic Design Requirements of Buildings to Achieve Community-Level Resilience Metrics</h4>
+          <p class="authors">Sediek, O. A., Roohi, M., &amp; van de Lindt, J. W.</p>
+          <p class="venue">ASCE-ASME Journal of Risk and Uncertainty in Engineering Systems, Part A</p>
+        </div>
+        <a class="pub-doi" href="https://doi.org/10.1061/AJRUA6.RUENG-1213" target="_blank" rel="noopener">DOI</a>
+      </article>
+      <article class="pub">
+        <div>
+          <h4>Seismic Resilience of Interdependent Built Environment for Integrating Structural Health Monitoring and Emerging Technologies in Decision-Making</h4>
+          <p class="authors">Makhoul, N., Roohi, M., van de Lindt, J. W., et al.</p>
+          <p class="venue">Structural Engineering International, 34(1), 19–33</p>
+          <span class="badge">IABSE Outstanding Paper 2025</span>
+        </div>
+        <a class="pub-doi" href="https://doi.org/10.1080/10168664.2023.2295901" target="_blank" rel="noopener">DOI</a>
+      </article>
+    </div>
+
+    <div class="pub-year"><h3>Selected earlier</h3>
+      <article class="pub">
+        <div>
+          <h4>Deep Learning for Post-earthquake Structural Assessment by Accounting for Mechanics-Based Model Uncertainty</h4>
+          <p class="authors">Cheraghzade, M., &amp; Roohi, M. (2022)</p>
+          <p class="venue">Journal of Building Engineering, 57, 104837</p>
+        </div>
+        <a class="pub-doi" href="https://doi.org/10.1016/j.jobe.2022.104837" target="_blank" rel="noopener">DOI</a>
+      </article>
+      <article class="pub">
+        <div>
+          <h4>Reconstructing Element-by-Element Dissipated Hysteretic Energy in Instrumented Buildings: Application to the Van Nuys Hotel Testbed</h4>
+          <p class="authors">Roohi, M., Hernandez, E. M., &amp; Rosowsky, D. V. (2021)</p>
+          <p class="venue">Journal of Engineering Mechanics, 147(1), 04020141</p>
+          <span class="badge">EOS OpenSees Award 2025</span>
+        </div>
+        <a class="pub-doi" href="https://doi.org/10.1061/(ASCE)EM.1943-7889.0001864" target="_blank" rel="noopener">DOI</a>
+      </article>
+      <article class="pub">
+        <div>
+          <h4>An Extended Model-Based Observer for State Estimation in Nonlinear Hysteretic Structural Systems</h4>
+          <p class="authors">Roohi, M., Erazo, K., Rosowsky, D. V., &amp; Hernandez, E. M. (2021)</p>
+          <p class="venue">Mechanical Systems and Signal Processing, 146, 107015</p>
+        </div>
+        <a class="pub-doi" href="https://doi.org/10.1016/j.ymssp.2020.107015" target="_blank" rel="noopener">DOI</a>
+      </article>
+      <article class="pub">
+        <div>
+          <h4>Performance-Based Post-Earthquake Decision-Making for Instrumented Buildings</h4>
+          <p class="authors">Roohi, M., &amp; Hernandez, E. M. (2020)</p>
+          <p class="venue">Journal of Civil Structural Health Monitoring, 10(5), 775–792</p>
+        </div>
+        <a class="pub-doi" href="https://doi.org/10.1007/s13349-020-00416-1" target="_blank" rel="noopener">DOI</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="news">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">News &amp; recognition</p>
+      <h2>Recent highlights</h2>
+    </div>
+    <div class="news-grid">
+      <article class="news-card">
+        <p class="when">Award · 2025</p>
+        <h3>IABSE Outstanding Scientific Paper Award</h3>
+        <p>International recognition for interdependent built-environment resilience and SHM decision-making work.</p>
+      </article>
+      <article class="news-card">
+        <p class="when">Award · 2025</p>
+        <h3>ASCE JSE Editor’s Choice</h3>
+        <p>Hospital network resilience in Hatay after the 2023 cascading earthquakes in Türkiye.</p>
+      </article>
+      <article class="news-card">
+        <p class="when">Award · 2025</p>
+        <h3>EOS OpenSees Research &amp; Innovation Award</h3>
+        <p>Recognition for dissipated hysteretic energy reconstruction in instrumented buildings (J. Eng. Mech., 2021).</p>
+      </article>
+      <article class="news-card">
+        <p class="when">Student · 2026</p>
+        <h3>Pramodit Adhikari — ASCE EMI Student Paper Award</h3>
+        <p>National student paper recognition for SiRIUS tornado / wind resilience research.</p>
+      </article>
+      <article class="news-card">
+        <p class="when">Service · 2025–</p>
+        <h3>Chair, ASCE Objective Resilience Committee</h3>
+        <p>National leadership advancing objective resilience methods and community practice.</p>
+      </article>
+      <article class="news-card">
+        <p class="when">Platform · 2026–2028</p>
+        <h3>NSF POSE Phase II — IN-CORE open-source ecosystem</h3>
+        <p>Implementing an open-source ecosystem for interdependent networked community resilience modeling.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="about-band" id="about">
+  <div class="container about-grid">
+    <div>
+      <p class="eyebrow" style="color:var(--star)">About</p>
+      <h2>Building resilience intelligence for the built environment</h2>
+    </div>
+    <div>
+      <p>
+        Dr. Milad Roohi is a tenure-track Assistant Professor in the Charles W. Durham School of Architectural
+        Engineering and Construction at UNL and director of the SiRIUS Lab. Before UNL, he was a Senior Scientist
+        at Aon Impact Forecasting and a postdoctoral fellow at the NIST Center for Risk-Based Community Resilience
+        Planning. He earned his Ph.D. from the University of Vermont.
+      </p>
+      <ul class="about-list">
+        <li>NIST Senior Research Associate (PREP) · Project IN-CORE Community Resilience Specialist</li>
+        <li>Adjunct Faculty, Utah State University · NSRI Academic Network Member</li>
+        <li>Prior: Aon Impact Forecasting · NIST CoE postdoc · Ph.D., University of Vermont</li>
+        <li>Lab site with people, funding, and testbeds: <a href="https://sirius.unl.edu/" style="color:var(--star)">sirius.unl.edu</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="join">
+  <div class="container">
+    <div class="join">
+      <div>
+        <h2>Interested in joining SiRIUS?</h2>
+        <p>
+          We welcome motivated undergraduate and graduate students interested in multi-hazard resilience,
+          digital twins, sensing, and decision support. Email with subject
+          <strong>Prospective Student – LAST NAME</strong> and one PDF: CV, unofficial transcripts, and a short research statement.
+        </p>
+      </div>
+      <a class="btn btn-primary" href="mailto:milad.roohi@unl.edu?subject=Prospective%20Student%20%E2%80%93%20">Email Dr. Roohi →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner">
+    <div>© <span id="y"></span> SiRIUS Lab · Milad Roohi · University of Nebraska–Lincoln</div>
+    <div class="footer-links">
+      <a href="https://sirius.unl.edu/">UNL SiRIUS</a>
+      <a href="https://scholar.google.com/citations?user=5jfQpTkAAAAJ&amp;hl=en">Scholar</a>
+      <a href="https://orcid.org/0000-0002-8937-3158">ORCID</a>
+      <a href="https://engineering.unl.edu/durhamschool/person/milad-roohi/">Durham profile</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+</script>
+</body>
+</html>
