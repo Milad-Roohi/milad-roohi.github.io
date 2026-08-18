@@ -213,7 +213,36 @@ a { color: inherit; text-decoration: none; }
 
 /* ── Sections ── */
 section { padding: 4.5rem 0; }
-.section-head { margin-bottom: 2rem; max-width: 40rem; }
+.section-head { margin-bottom: 2rem; max-width: 44rem; }
+.section-head .jump-links {
+  display: flex; flex-wrap: wrap; gap: 0.55rem;
+  margin-top: 1.1rem;
+}
+.section-head .jump-links a {
+  font-size: 0.82rem; font-weight: 700;
+  color: var(--navy);
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  transition: border-color 0.15s, background 0.15s, transform 0.15s;
+}
+.section-head .jump-links a:hover {
+  border-color: var(--teal);
+  background: rgba(26,122,140,0.08);
+  color: var(--teal-deep);
+  transform: translateY(-1px);
+}
+.section-head .jump-links a.primary {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: #fff;
+}
+.section-head .jump-links a.primary:hover {
+  background: var(--teal-deep);
+  border-color: var(--teal-deep);
+  color: #fff;
+}
 .eyebrow {
   font-family: "JetBrains Mono", monospace;
   font-size: 0.7rem;
@@ -664,9 +693,18 @@ footer {
 <section id="research">
   <div class="container">
     <div class="section-head">
-      <p class="eyebrow">Research themes</p>
-      <h2>From instrumented buildings to community recovery</h2>
-      <p>Four focus areas with direct links to <a href="#funding" style="color:var(--teal);font-weight:600;text-decoration:underline">funded projects</a> and <a href="#publications" style="color:var(--teal);font-weight:600;text-decoration:underline">selected papers</a>.</p>
+      <p class="eyebrow">What we work on</p>
+      <h2>Four research areas</h2>
+      <p>
+        SiRIUS studies how buildings and communities withstand and recover from earthquakes, wind, flood, and other hazards.
+        Start with a research area below, or jump to sponsors and papers.
+      </p>
+      <div class="jump-links">
+        <a class="primary" href="#funding">Funded projects →</a>
+        <a href="#publications">Selected publications →</a>
+        <a href="https://tools.in-core.org/" target="_blank" rel="noopener">IN-CORE tools ↗</a>
+        <a href="https://sirius.unl.edu/research/" target="_blank" rel="noopener">Full UNL research page ↗</a>
+      </div>
     </div>
 
     <div class="research-categories">
@@ -712,7 +750,7 @@ footer {
           <div class="r-num">02</div>
           <div>
             <h3>Portfolio Bayesian updating &amp; functional recovery</h3>
-            <p>From uncertain inventories to community FR metrics and retrofit prioritization under seismic and multi-hazard risk.</p>
+            <p>From uncertain inventories to community recovery metrics and retrofit prioritization under seismic and multi-hazard risk.</p>
             <div class="tag-row"><span class="tag">Functional recovery</span><span class="tag">Retrofit prioritization</span></div>
             <div class="meta-row"><span class="meta-label">Funding</span>
               <a href="#fund-nist-incore">NIST / IN-CORE PREP</a><span class="sep">·</span>
@@ -728,7 +766,7 @@ footer {
         <div class="research-item">
           <div class="r-num">03</div>
           <div>
-            <h3>Building inventory &amp; exposure UQ</h3>
+            <h3>Building inventory &amp; exposure uncertainty</h3>
             <p>ML and Bayesian imputation so resilience metrics are not dominated by missing national inventory attributes.</p>
             <div class="tag-row"><span class="tag">Inventory gaps</span><span class="tag">Uncertainty quantification</span></div>
             <div class="meta-row"><span class="meta-label">Funding</span>
@@ -937,7 +975,7 @@ footer {
         <p>Data-driven digital-twin frameworks with verification/validation/UQ, and low-cost sensing for post-earthquake assessment.</p>
         <div class="f-links">
           <a href="#theme-dt-shm">SHM theme →</a>
-          <a href="#theme-community">Inventory / FR →</a>
+          <a href="#theme-community">Inventories →</a>
         </div>
       </article>
       <article class="funding-card" id="fund-unmc">
@@ -971,7 +1009,7 @@ footer {
           <h4>Integrated Data Imputation of National Inventories for Bridging Information Gaps and Outcome Risk Uncertainty in Community Resilience Modeling</h4>
           <p class="authors">Ghasemi, S., Roohi, M., Sanderson, D., Sediek, O., &amp; van de Lindt, J.</p>
           <p class="venue">International Journal of Disaster Risk Reduction, 106077</p>
-          <p class="pub-theme">Theme: <a href="#theme-community">Inventory &amp; exposure UQ</a> · Funding: <a href="#fund-nist-incore">NIST / IN-CORE</a></p>
+          <p class="pub-theme">Theme: <a href="#theme-community">Building inventories</a> · Funding: <a href="#fund-nist-incore">NIST / IN-CORE</a></p>
         </div>
         <a class="pub-doi" href="https://doi.org/10.1016/j.ijdrr.2026.106077" target="_blank" rel="noopener">DOI</a>
       </article>
@@ -1005,7 +1043,7 @@ footer {
           <h4>Multi-disciplinary Seismic Resilience Modeling for Developing Mitigation Policies and Recovery Planning</h4>
           <p class="authors">Roohi, M., Ghasemi, S., Sediek, O., Jeon, H., van de Lindt, J. W., Shields, M., Hamideh, S., &amp; Cutler, H.</p>
           <p class="venue">Resilient Cities and Structures, 3(2), 66–84</p>
-          <p class="pub-theme">Theme: <a href="#theme-community">IN-CORE / FR</a> · Funding: <a href="#fund-nist-incore">NIST PREP</a></p>
+          <p class="pub-theme">Theme: <a href="#theme-community">Community platforms</a> · Funding: <a href="#fund-nist-incore">NIST PREP</a></p>
         </div>
         <a class="pub-doi" href="https://doi.org/10.1016/j.rcns.2024.07.003" target="_blank" rel="noopener">DOI</a>
       </article>
@@ -1014,7 +1052,7 @@ footer {
           <h4>A Genetic Algorithm Framework for Seismic Retrofit of Building Portfolios to Enhance Community Resilience</h4>
           <p class="authors">Sediek, O. A., Roohi, M., &amp; van de Lindt, J. W.</p>
           <p class="venue">International Journal of Disaster Risk Reduction, 104570</p>
-          <p class="pub-theme">Theme: <a href="#theme-community">Portfolio FR</a> · Funding: <a href="#fund-nist-incore">NIST / IN-CORE</a></p>
+          <p class="pub-theme">Theme: <a href="#theme-community">Community resilience</a> · Funding: <a href="#fund-nist-incore">NIST / IN-CORE</a></p>
         </div>
         <a class="pub-doi" href="https://doi.org/10.1016/j.ijdrr.2024.104570" target="_blank" rel="noopener">DOI</a>
       </article>
@@ -1023,7 +1061,7 @@ footer {
           <h4>A Decision Support Methodology for Seismic Design Requirements of Buildings to Achieve Community-Level Resilience Metrics</h4>
           <p class="authors">Sediek, O. A., Roohi, M., &amp; van de Lindt, J. W.</p>
           <p class="venue">ASCE-ASME Journal of Risk and Uncertainty in Engineering Systems, Part A</p>
-          <p class="pub-theme">Theme: <a href="#theme-community">Portfolio FR</a> · Funding: <a href="#fund-nist-incore">NIST / IN-CORE</a></p>
+          <p class="pub-theme">Theme: <a href="#theme-community">Community resilience</a> · Funding: <a href="#fund-nist-incore">NIST / IN-CORE</a></p>
         </div>
         <a class="pub-doi" href="https://doi.org/10.1061/AJRUA6.RUENG-1213" target="_blank" rel="noopener">DOI</a>
       </article>
@@ -1082,7 +1120,7 @@ footer {
           <h4>Implication of Building Inventory Accuracy on Physical and Socio-economic Resilience Metrics for Informed Decision-Making in Natural Hazards</h4>
           <p class="authors">Roohi, M., van de Lindt, J. W., Rosenheim, N., Hu, Y., &amp; Cutler, H. (2021)</p>
           <p class="venue">Structure and Infrastructure Engineering, 17(4), 534–554</p>
-          <p class="pub-theme">Theme: <a href="#theme-community">Inventory &amp; exposure UQ</a> · Funding: <a href="#fund-nist-incore">NIST / IN-CORE</a></p>
+          <p class="pub-theme">Theme: <a href="#theme-community">Building inventories</a> · Funding: <a href="#fund-nist-incore">NIST / IN-CORE</a></p>
         </div>
         <a class="pub-doi" href="https://doi.org/10.1080/15732479.2020.1845753" target="_blank" rel="noopener">DOI</a>
       </article>
