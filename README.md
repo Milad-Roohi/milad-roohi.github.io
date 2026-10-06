@@ -1,43 +1,39 @@
-# Milad Roohi & SiRIUS Lab — Academic Website
+# milad-roohi.github.io
 
-This repository contains the source for the academic website of **Dr. Milad Roohi** and the **Smart Resilient Infrastructure and Urban Systems (SiRIUS) Lab** at the University of Nebraska–Lincoln.
+Personal / SiRIUS Lab academic site for **Dr. Milad Roohi** (University of Nebraska–Lincoln).
 
-- **Academic website:** https://milad-roohi.github.io/
-- **SiRIUS Lab:** https://sirius.unl.edu/
-- **UNL faculty profile:** https://engineering.unl.edu/durhamschool/faculty/milad-roohi/
+- **Live:** https://milad-roohi.github.io/
+- **Default branch:** `site-2026`
+- **Lab CMS:** https://sirius.unl.edu/
+- **Content source:** Digital Mind `A-Research/82 Website and Social Media/2026-SiRIUS-Website-Content/`
 
-## Research scope
+## Structure
 
-The site presents research and teaching focused on:
+A static multi-page site. Each page is one self-contained HTML file with inline CSS. There is no build step or framework.
 
-- resilient infrastructure and communities;
-- digital twins, structural sensing, and health monitoring;
-- multi-hazard risk, infrastructure interdependencies, and recovery;
-- AI-enabled and uncertainty-aware decision support.
+| Page | Contents |
+| ---- | -------- |
+| `index.html` | Landing: lab overview, why the name, collaborators, latest news, join |
+| `research.html` | Research pillars, theme areas, testbeds, funded projects |
+| `publications.html` | Selected journal publications (published and accepted) |
+| `people.html` | PI, postdocs, students, alumni |
+| `news.html` | News by year |
+| `openings.html` | How to join the lab |
+| `assets/` | `milad-roohi.jpg`, `sirius-logo.png` |
 
-## Repository structure
+Old single-page links (`index.html#publications`, `#research`, `#funding`, `#about`, `#news`, `#theme-*`, `#fund-*`, `#pub-*`) are forwarded to the new pages by a small script in the `<head>` of `index.html`.
 
-- `index.html` — single-page academic and lab website
-- `assets/` — images and supporting static assets
-- `README.md` — repository documentation
+## Update workflow
+
+1. Edit the CV (`cv_tp.tex`) and/or the website content pack markdown.
+2. Update the relevant page (`publications.html`, `news.html`, `people.html`, `research.html`, …). The nav and footer are repeated in each file, so keep them in sync.
+3. `git commit` and `git push` to `site-2026`.
+4. Optionally mirror key facts into UNL Herbie (`sirius.unl.edu`) manually.
 
 ## Local preview
 
-Open `index.html` directly in a browser, or run:
+Open `index.html` in a browser, or:
 
 ```bash
 python3 -m http.server 8000
 ```
-
-Then visit `http://localhost:8000`.
-
-## Updating the site
-
-1. Update the relevant research, publication, teaching, or news content in `index.html`.
-2. Preview the site locally and check navigation, links, and responsive layout.
-3. Commit and push the reviewed changes to the repository's published branch.
-4. Mirror major lab updates on the official SiRIUS Lab website when appropriate.
-
-## Content and reuse
-
-This repository is primarily a public academic website. Publications, figures, photographs, and institutional marks may have separate rights or attribution requirements; do not assume that all site content is covered by an open-source license.
