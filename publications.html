@@ -3,13 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script>
-/* Legacy single-page anchors (pre-2026 index.html) -> new multi-page locations */
-(function(){var h=(location.hash||"").slice(1);if(!h)return;var m={research:"research.html",funding:"research.html#funding",pillars:"research.html#pillars",publications:"publications.html",news:"news.html",about:"people.html#pi"};var t=m[h]||(/^(theme|fund)-/.test(h)?"research.html#"+h:/^pub-/.test(h)?"publications.html#"+h:null);if(t)location.replace(t);})();
-</script>
-<meta name="description" content="SiRIUS Lab — Smart Resilient Infrastructure and Urban Systems at the University of Nebraska–Lincoln, directed by Dr. Milad Roohi. Digital twins, multi-hazard resilience, and decision support.">
+<meta name="description" content="Selected journal publications of the SiRIUS Lab and Dr. Milad Roohi, University of Nebraska–Lincoln.">
 <meta name="author" content="Milad Roohi">
-<title>SiRIUS Lab · Milad Roohi · University of Nebraska–Lincoln</title>
+<title>Publications · SiRIUS Lab · University of Nebraska–Lincoln</title>
 <link rel="icon" type="image/png" href="assets/sirius-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -870,7 +866,7 @@ footer { background: var(--white); }
 
 <nav class="site-nav">
   <div class="container nav-inner" style="width:min(100% - 2.5rem, 1180px)">
-    <a class="brand" href="index.html" aria-current="page">
+    <a class="brand" href="index.html">
       <img src="assets/sirius-logo.png" alt="SiRIUS Lab logo" width="40" height="40">
       <span class="b-text"><strong>SiRIUS Lab</strong><small>Smart Resilient Infrastructure &amp; Urban Systems</small></span>
     </a>
@@ -878,7 +874,7 @@ footer { background: var(--white); }
     <div class="nav-links" id="navLinks">
       <a href="people.html">People</a>
       <a href="research.html">Research</a>
-      <a href="publications.html">Publications</a>
+      <a href="publications.html" class="is-active" aria-current="page">Publications</a>
       <a href="news.html">News</a>
       <a class="nav-cta" href="openings.html">Openings</a>
     </div>
@@ -905,85 +901,167 @@ footer { background: var(--white); }
       </div>
     </aside>
     <main class="main">
-      <h1 class="lab-title"><span class="w-teal">Smart</span> <span class="w-gold">Resilient</span> <span class="w-navy">Infrastructure &amp; Urban Systems</span><span class="acr">(SiRIUS) Lab · University of Nebraska–Lincoln</span></h1>
+      <h1 class="page-title">Publications</h1>
+      <p class="lead">Selected journal work, synced from the CV (June 23, 2026; metrics refreshed October 3, 2026). The complete list is on <a href="https://scholar.google.com/citations?user=5jfQpTkAAAAJ&amp;hl=en" target="_blank" rel="noopener" style="color:var(--teal);font-weight:600;text-decoration:underline">Google Scholar</a>.</p>
+      <div class="snapshot" aria-label="Publication snapshot">
+        <div><strong>482</strong><span>citations (Scholar, Oct 3, 2026)</span></div>
+        <div><strong>12</strong><span>h-index</span></div>
+        <div><strong>12</strong><span>i10-index</span></div>
+        <div><strong>54</strong><span>works (print, accepted, in review)</span></div>
+        <div><strong>80</strong><span>presentations</span></div>
+      </div>
 
-      <section class="banner" aria-label="Lab overview" style="padding-block:1.75rem">
-        <img src="assets/sirius-logo.png" alt="SiRIUS Lab logo" width="170" height="167">
+      <h2 class="h2" id="journal"><span class="eyebrow">Peer-reviewed</span>Journal articles</h2>
+      <details class="pub-group" open id="published">
+        <summary>Selected published <span class="count">12</span></summary>
+        <p class="pub-year-label">2026</p>
+        <article class="pub" id="pub-ijdrr-2026-ghasemi">
+        <span class="j-num">J12.</span>
         <div>
-          <p class="kicker">Welcome to the SiRIUS Lab</p>
-          <p>We investigate how interconnected infrastructure and urban systems perform, fail, and recover under compounding natural hazards and climate stressors.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="research.html">Explore research</a>
-            <a class="btn btn-ghost" href="people.html">Meet the lab</a>
-            <a class="btn btn-ghost" href="openings.html">Openings →</a>
-          </div>
-          <div class="stats" aria-label="Lab snapshot">
-            <div class="stat"><strong>482</strong><span>citations · Scholar, Oct 3, 2026</span></div>
-            <div class="stat"><strong>12</strong><span>h-index</span></div>
-            <div class="stat"><strong>12</strong><span>i10-index</span></div>
-            <div class="stat"><strong>54</strong><span>works</span></div>
-            <div class="stat"><strong>80</strong><span>presentations</span></div>
-          </div>
+          <h4>Integrated Data Imputation of National Inventories for Bridging Information Gaps and Outcome Risk Uncertainty in Community Resilience Modeling</h4>
+          <p class="authors">Ghasemi, S., <b>Roohi, M.</b>, Sanderson, D., Sediek, O., &amp; van de Lindt, J.</p>
+          <p class="venue">International Journal of Disaster Risk Reduction, 106077</p>
+          <p class="pub-theme">Theme: <a href="research.html#theme-community">Building inventories</a> · Funding: <a href="research.html#fund-nist-incore">NIST / IN-CORE</a></p>
         </div>
-      </section>
-
-      <h2 class="h2" id="why"><span class="eyebrow">The name</span>Why SiRIUS?</h2>
-      <p class="body">Each part of the name points to how the lab works.</p>
-      <div class="why-grid">
-        <div class="why"><h3 class="w-teal">Smart</h3><p>Digital twins, sensing, and AI-enabled decision support that combine data with physics-based models of buildings and infrastructure.</p></div>
-        <div class="why"><h3 class="w-gold">Resilient</h3><p>Withstanding and recovering from earthquakes, extreme wind, flooding, fire, and climate-driven hazards, and the cascading impacts between them.</p></div>
-        <div class="why"><h3 class="w-navy">Infrastructure &amp; Urban Systems</h3><p>From single instrumented assets to bridges, lifelines, hospitals, networks, and whole communities.</p></div>
-      </div>
-
-      <h2 class="h2" id="overview"><span class="eyebrow">Overview</span>Research at SiRIUS</h2>
-      <p class="body">We integrate structural sensing, data fusion, and computational modeling to build digital twins that capture system behavior from instrumented assets to community scale. By embedding these models in decision-support and resilience platforms, especially open environments such as IN-CORE, we translate analysis into mitigation, design, and recovery decisions for communities and agencies.</p>
-      <p class="body">Our work is organized into four interconnected areas:</p>
-      <div class="area-list">
-        <a href="research.html#theme-dt-shm" style="--c:var(--teal)"><span><strong>Digital twins &amp; structural health</strong><span class="d">Model–data fusion for instrumented buildings when sensing is sparse.</span></span><span class="go">Explore →</span></a>
-        <a href="research.html#theme-community" style="--c:var(--gold-ink)"><span><strong>Community resilience &amp; open platforms</strong><span class="d">Functional recovery, inventory uncertainty, and IN-CORE tools planners can run.</span></span><span class="go">Explore →</span></a>
-        <a href="research.html#theme-multihazard" style="--c:var(--emerging)"><span><strong>Multi-hazard community systems</strong><span class="d">Tornado and extreme wind, cascading lifelines, equity-centered decision support.</span></span><span class="go">Explore →</span></a>
-        <a href="research.html#theme-networks" style="--c:var(--active)"><span><strong>Networks &amp; emerging hazards</strong><span class="d">Transportation networks under flood and climate stress; wildfire community resilience.</span></span><span class="go">Explore →</span></a>
-      </div>
-
-      <div class="callout">
-        <h3>A major direction: open resilience platforms</h3>
-        <p>Through NSF POSE Phase II (2026–2028), SiRIUS contributes to an open-source ecosystem for IN-CORE, the Interdependent Networked Community Resilience Modeling Environment, so community models become decision tools. <a href="research.html#fund-nsf-pose" style="color:var(--teal-deep);font-weight:700;text-decoration:underline">Project details →</a></p>
-      </div>
-
-      <h2 class="h2" id="collaborators"><span class="eyebrow">Collaborators</span>Academic collaborators &amp; partners</h2>
-      <ul class="collab-list">
-        <li><strong>John W. van de Lindt</strong> <span>(Colorado State University) · NSF POSE lead PI</span></li>
-        <li><strong>Jamie E. Padgett</strong> <span>(Rice University) · NSF POSE co-PI</span></li>
-        <li><strong>Jong S. Lee</strong> <span>(University of Illinois) · NSF POSE co-PI</span></li>
-        <li><strong>Xinyue Ye</strong> <span>(University of Alabama) · NSF POSE co-PI</span></li>
-        <li><strong>Eric M. Hernandez</strong> <span>(University of Vermont) · SHM &amp; observers</span></li>
-        <li><strong>Rodrigo Astroza</strong> <span>(Universidad de los Andes, Chile)</span></li>
-        <li><strong>Paolo Bocchini</strong> <span>(Lehigh University) · ASCE SEI catastrophe modeling</span></li>
-        <li><strong>Sardar Malek</strong> <span>(University of Victoria) · Mitacs co-supervisor</span></li>
-        <li><strong>Mahmoud (Moe) Alahmad &amp; Hamid Sharif</strong> <span>· transmission-system reliability co-PIs</span></li>
-        <li><strong>Christine E. Wittich</strong> <span>· flood digital twins co-author</span></li>
-        <li><strong>Harvey Cutler</strong> <span>· resilience modeling co-author</span></li>
-        <li><strong>Omar Sediek</strong> <span>· portfolio retrofit co-author</span></li>
-      </ul>
-      <div class="partner-row" aria-label="Partner programs">
-        <span>NIST Center for Risk-Based Community Resilience Planning</span><span>IN-CORE</span><span>University of Nebraska Medical Center</span><span>Nebraska Department of Transportation</span><span>NASEM / TRB ACRP</span><span>MATC</span>
-      </div>
-
-      <h2 class="h2" id="latest"><span class="eyebrow">News</span>Latest from the lab</h2>
-      <ul class="mini-news">
-        <li><span class="d">Sep 2026</span><span><strong>Accepted short paper at IEEE Digital Twin 2026</strong> on flood-resilient bridge networks.</span></li>
-        <li><span class="d">Aug 2026</span><span><strong>NSF POSE Phase II for the IN-CORE ecosystem begins</strong>, with Dr. Roohi as co-PI.</span></li>
-        <li><span class="d">Jun 2026</span><span><strong>Pramodit Adhikari places third</strong> in the ASCE EMI Objective Resilience Student Paper and Presentation Competition.</span></li>
-        <li><span class="d">Jun 2026</span><span><strong>Welcome, Dr. Sina Naeimi</strong>, postdoctoral researcher.</span></li>
-      </ul>
+        <a class="pub-doi" href="https://doi.org/10.1016/j.ijdrr.2026.106077" target="_blank" rel="noopener">DOI</a>
+      </article>
+        <p class="pub-year-label">2025</p>
+        <article class="pub" id="pub-jse-2025-hatay">
+        <span class="j-num">J11.</span>
+        <div>
+          <h4>Hospital Network Resilience in Hatay Following the 2023 Cascading Earthquakes in Türkiye: A Year-Long Investigation</h4>
+          <p class="authors"><b>Roohi, M.</b>, Deniz, D., &amp; Cheraghzade, M.</p>
+          <p class="venue">Journal of Structural Engineering, 151(5), 05025001</p>
+          <span class="badge">Editor’s Choice</span>
+          <p class="pub-theme">Theme: <a href="research.html#theme-multihazard">Cascading systems</a> · Funding: <a href="research.html#fund-unmc">UNL–UNMC / community resilience</a></p>
+        </div>
+        <a class="pub-doi" href="https://doi.org/10.1061/JSENDH.STENG-13964" target="_blank" rel="noopener">DOI</a>
+      </article>
+        <p class="pub-year-label">2024</p>
+        <article class="pub" id="pub-rcns-2024">
+        <span class="j-num">J10.</span>
+        <div>
+          <h4>Multi-disciplinary Seismic Resilience Modeling for Developing Mitigation Policies and Recovery Planning</h4>
+          <p class="authors"><b>Roohi, M.</b>, Ghasemi, S., Sediek, O., Jeon, H., van de Lindt, J. W., Shields, M., Hamideh, S., &amp; Cutler, H.</p>
+          <p class="venue">Resilient Cities and Structures, 3(2), 66–84</p>
+          <p class="pub-theme">Theme: <a href="research.html#theme-community">Community platforms</a> · Funding: <a href="research.html#fund-nist-incore">NIST PREP</a></p>
+        </div>
+        <a class="pub-doi" href="https://doi.org/10.1016/j.rcns.2024.07.003" target="_blank" rel="noopener">DOI</a>
+      </article>
+        <article class="pub" id="pub-ijdrr-2024-sediek">
+        <span class="j-num">J9.</span>
+        <div>
+          <h4>A Genetic Algorithm Framework for Seismic Retrofit of Building Portfolios to Enhance Community Resilience</h4>
+          <p class="authors">Sediek, O. A., <b>Roohi, M.</b>, &amp; van de Lindt, J. W.</p>
+          <p class="venue">International Journal of Disaster Risk Reduction, 104570</p>
+          <p class="pub-theme">Theme: <a href="research.html#theme-community">Community resilience</a> · Funding: <a href="research.html#fund-nist-incore">NIST / IN-CORE</a></p>
+        </div>
+        <a class="pub-doi" href="https://doi.org/10.1016/j.ijdrr.2024.104570" target="_blank" rel="noopener">DOI</a>
+      </article>
+        <article class="pub" id="pub-risk-2024-sediek">
+        <span class="j-num">J8.</span>
+        <div>
+          <h4>A Decision Support Methodology for Seismic Design Requirements of Buildings to Achieve Community-Level Resilience Metrics</h4>
+          <p class="authors">Sediek, O. A., <b>Roohi, M.</b>, &amp; van de Lindt, J. W.</p>
+          <p class="venue">ASCE-ASME Journal of Risk and Uncertainty in Engineering Systems, Part A</p>
+          <p class="pub-theme">Theme: <a href="research.html#theme-community">Community resilience</a> · Funding: <a href="research.html#fund-nist-incore">NIST / IN-CORE</a></p>
+        </div>
+        <a class="pub-doi" href="https://doi.org/10.1061/AJRUA6.RUENG-1213" target="_blank" rel="noopener">DOI</a>
+      </article>
+        <article class="pub" id="pub-sei-2024-makhoul">
+        <span class="j-num">J7.</span>
+        <div>
+          <h4>Seismic Resilience of Interdependent Built Environment for Integrating Structural Health Monitoring and Emerging Technologies in Decision-Making</h4>
+          <p class="authors">Makhoul, N., <b>Roohi, M.</b>, van de Lindt, J. W., et al.</p>
+          <p class="venue">Structural Engineering International, 34(1), 19–33</p>
+          <span class="badge">IABSE Outstanding Paper 2025</span>
+          <p class="pub-theme">Theme: <a href="research.html#theme-community">Open platforms</a> · <a href="research.html#theme-multihazard">Cascading</a></p>
+        </div>
+        <a class="pub-doi" href="https://doi.org/10.1080/10168664.2023.2295901" target="_blank" rel="noopener">DOI</a>
+      </article>
+        <p class="pub-year-label">2023</p>
+        <article class="pub" id="pub-sri-2023">
+        <span class="j-num">J6.</span>
+        <div>
+          <h4>Probabilistic Seismic Multi-Hazard Risk and Restoration Modeling for Resilience-Informed Decision Making in Railway Networks</h4>
+          <p class="authors">Farahani, S., Shojaeian, A., Behnam, B., &amp; <b>Roohi, M.</b> (2023)</p>
+          <p class="venue">Sustainable and Resilient Infrastructure, 8(5), 470–491</p>
+          <p class="pub-theme">Theme: <a href="research.html#theme-networks">Network resilience</a></p>
+        </div>
+        <a class="pub-doi" href="https://doi.org/10.1080/23789689.2023.2170090" target="_blank" rel="noopener">DOI</a>
+      </article>
+        <p class="pub-year-label">2022</p>
+        <article class="pub" id="pub-jobe-2022">
+        <span class="j-num">J5.</span>
+        <div>
+          <h4>Deep Learning for Post-earthquake Structural Assessment by Accounting for Mechanics-Based Model Uncertainty</h4>
+          <p class="authors">Cheraghzade, M., &amp; <b>Roohi, M.</b> (2022)</p>
+          <p class="venue">Journal of Building Engineering, 57, 104837</p>
+          <p class="pub-theme">Theme: <a href="research.html#theme-dt-shm">Digital twins &amp; SHM</a></p>
+        </div>
+        <a class="pub-doi" href="https://doi.org/10.1016/j.jobe.2022.104837" target="_blank" rel="noopener">DOI</a>
+      </article>
+        <p class="pub-year-label">2021</p>
+        <article class="pub" id="pub-jem-2021">
+        <span class="j-num">J4.</span>
+        <div>
+          <h4>Reconstructing Element-by-Element Dissipated Hysteretic Energy in Instrumented Buildings: Application to the Van Nuys Hotel Testbed</h4>
+          <p class="authors"><b>Roohi, M.</b>, Hernandez, E. M., &amp; Rosowsky, D. V. (2021)</p>
+          <p class="venue">Journal of Engineering Mechanics, 147(1), 04020141</p>
+          <span class="badge">EOS OpenSees Award 2025</span>
+          <p class="pub-theme">Theme: <a href="research.html#theme-dt-shm">Digital twins &amp; SHM</a> · Funding: <a href="research.html#fund-nasa-epscor">NASA EPSCoR / SHM line</a></p>
+        </div>
+        <a class="pub-doi" href="https://doi.org/10.1061/(ASCE)EM.1943-7889.0001864" target="_blank" rel="noopener">DOI</a>
+      </article>
+        <article class="pub" id="pub-mssp-2021">
+        <span class="j-num">J3.</span>
+        <div>
+          <h4>An Extended Model-Based Observer for State Estimation in Nonlinear Hysteretic Structural Systems</h4>
+          <p class="authors"><b>Roohi, M.</b>, Erazo, K., Rosowsky, D. V., &amp; Hernandez, E. M. (2021)</p>
+          <p class="venue">Mechanical Systems and Signal Processing, 146, 107015</p>
+          <p class="pub-theme">Theme: <a href="research.html#theme-dt-shm">Digital twins &amp; SHM</a></p>
+        </div>
+        <a class="pub-doi" href="https://doi.org/10.1016/j.ymssp.2020.107015" target="_blank" rel="noopener">DOI</a>
+      </article>
+        <article class="pub" id="pub-sie-2021">
+        <span class="j-num">J2.</span>
+        <div>
+          <h4>Implication of Building Inventory Accuracy on Physical and Socio-economic Resilience Metrics for Informed Decision-Making in Natural Hazards</h4>
+          <p class="authors"><b>Roohi, M.</b>, van de Lindt, J. W., Rosenheim, N., Hu, Y., &amp; Cutler, H. (2021)</p>
+          <p class="venue">Structure and Infrastructure Engineering, 17(4), 534–554</p>
+          <p class="pub-theme">Theme: <a href="research.html#theme-community">Building inventories</a> · Funding: <a href="research.html#fund-nist-incore">NIST / IN-CORE</a></p>
+        </div>
+        <a class="pub-doi" href="https://doi.org/10.1080/15732479.2020.1845753" target="_blank" rel="noopener">DOI</a>
+      </article>
+        <p class="pub-year-label">2020</p>
+        <article class="pub" id="pub-jcshm-2020">
+        <span class="j-num">J1.</span>
+        <div>
+          <h4>Performance-Based Post-Earthquake Decision-Making for Instrumented Buildings</h4>
+          <p class="authors"><b>Roohi, M.</b>, &amp; Hernandez, E. M. (2020)</p>
+          <p class="venue">Journal of Civil Structural Health Monitoring, 10(5), 775–792</p>
+          <p class="pub-theme">Theme: <a href="research.html#theme-dt-shm">Digital twins &amp; SHM</a></p>
+        </div>
+        <a class="pub-doi" href="https://doi.org/10.1007/s13349-020-00416-1" target="_blank" rel="noopener">DOI</a>
+      </article>
+      </details>
+      <details class="pub-group" open id="accepted">
+        <summary>Accepted / in press <span class="count">1</span></summary>
+        <article class="pub" id="pub-nhr-2026-zannat">
+        <span class="j-num">A1.</span>
+        <div>
+          <h4>Integrating ML-Based Reverse Engineering of CGE Models with Optimization for Enhancing Community Resilience</h4>
+          <p class="authors">Zannat, N. T., Sen Gupta, H., Ghasemi, S., Nicholson, C. D., Cutler, H., González, A. D., &amp; <b>Roohi, M.</b></p>
+          <p class="venue">Natural Hazards Review (ASCE) — Accepted</p>
+          <p class="pub-theme">Theme: <a href="research.html#theme-community">Community resilience</a> · Funding: <a href="research.html#fund-nist-incore">NIST / related</a></p>
+        </div>
+        <span class="pub-doi">Accepted</span>
+      </article>
+      </details>
       <div class="more-row">
-        <a class="btn btn-teal" href="news.html">All news →</a>
-        <a class="btn btn-line" href="publications.html">Publications →</a>
-      </div>
-
-      <div class="callout gold" id="join">
-        <h3>Share our vision?</h3>
-        <p>We welcome motivated undergraduate and graduate students interested in multi-hazard resilience, digital twins, sensing, and decision support. <a href="openings.html" style="color:var(--teal-deep);font-weight:700;text-decoration:underline">See openings →</a></p>
+        <a class="btn btn-teal" href="https://scholar.google.com/citations?user=5jfQpTkAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar →</a>
+        <a class="btn btn-line" href="https://sirius.unl.edu/publications/" target="_blank" rel="noopener">Lab publications page ↗</a>
+        <a class="btn btn-line" href="research.html">Research areas →</a>
       </div>
     </main>
   </div>

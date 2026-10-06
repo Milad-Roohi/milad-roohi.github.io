@@ -3,13 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script>
-/* Legacy single-page anchors (pre-2026 index.html) -> new multi-page locations */
-(function(){var h=(location.hash||"").slice(1);if(!h)return;var m={research:"research.html",funding:"research.html#funding",pillars:"research.html#pillars",publications:"publications.html",news:"news.html",about:"people.html#pi"};var t=m[h]||(/^(theme|fund)-/.test(h)?"research.html#"+h:/^pub-/.test(h)?"publications.html#"+h:null);if(t)location.replace(t);})();
-</script>
-<meta name="description" content="SiRIUS Lab — Smart Resilient Infrastructure and Urban Systems at the University of Nebraska–Lincoln, directed by Dr. Milad Roohi. Digital twins, multi-hazard resilience, and decision support.">
+<meta name="description" content="News, awards, and updates from the SiRIUS Lab at the University of Nebraska–Lincoln.">
 <meta name="author" content="Milad Roohi">
-<title>SiRIUS Lab · Milad Roohi · University of Nebraska–Lincoln</title>
+<title>News · SiRIUS Lab · University of Nebraska–Lincoln</title>
 <link rel="icon" type="image/png" href="assets/sirius-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -870,7 +866,7 @@ footer { background: var(--white); }
 
 <nav class="site-nav">
   <div class="container nav-inner" style="width:min(100% - 2.5rem, 1180px)">
-    <a class="brand" href="index.html" aria-current="page">
+    <a class="brand" href="index.html">
       <img src="assets/sirius-logo.png" alt="SiRIUS Lab logo" width="40" height="40">
       <span class="b-text"><strong>SiRIUS Lab</strong><small>Smart Resilient Infrastructure &amp; Urban Systems</small></span>
     </a>
@@ -879,114 +875,161 @@ footer { background: var(--white); }
       <a href="people.html">People</a>
       <a href="research.html">Research</a>
       <a href="publications.html">Publications</a>
-      <a href="news.html">News</a>
+      <a href="news.html" class="is-active" aria-current="page">News</a>
       <a class="nav-cta" href="openings.html">Openings</a>
     </div>
   </div>
 </nav>
 
-<div class="page-wrap with-side">
-    <aside class="sidebar" aria-label="Lab director">
-      <div class="profile">
-        <img src="assets/milad-roohi.jpg" alt="Portrait of Milad Roohi" width="150" height="150">
-        <h3>Milad Roohi, Ph.D.</h3>
-        <p class="pos">Assistant Professor · Director, SiRIUS Lab</p>
-        <p class="bio">Durham School of Architectural Engineering and Construction, University of Nebraska–Lincoln. College of Engineering Teaching Fellow.</p>
-        <ul>
-          <li><span class="ic">UNL</span>University of Nebraska–Lincoln</li>
-          <li><span class="ic">@</span><a href="mailto:milad.roohi@unl.edu">milad.roohi@unl.edu</a></li>
-          <li><span class="ic">GS</span><a href="https://scholar.google.com/citations?user=5jfQpTkAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a></li>
-          <li><span class="ic">iD</span><a href="https://orcid.org/0000-0002-8937-3158" target="_blank" rel="noopener">ORCID</a></li>
-          <li><span class="ic">RG</span><a href="https://www.researchgate.net/profile/Milad_Roohi2" target="_blank" rel="noopener">ResearchGate</a></li>
-          <li><span class="ic">in</span><a href="https://www.linkedin.com/in/mroohigh/" target="_blank" rel="noopener">LinkedIn</a></li>
-          <li><span class="ic">DS</span><a href="https://engineering.unl.edu/durhamschool/person/milad-roohi/" target="_blank" rel="noopener">Durham profile</a></li>
-        </ul>
-        <a class="side-cta" href="openings.html">Join the lab →</a>
-      </div>
-    </aside>
-    <main class="main">
-      <h1 class="lab-title"><span class="w-teal">Smart</span> <span class="w-gold">Resilient</span> <span class="w-navy">Infrastructure &amp; Urban Systems</span><span class="acr">(SiRIUS) Lab · University of Nebraska–Lincoln</span></h1>
-
-      <section class="banner" aria-label="Lab overview" style="padding-block:1.75rem">
-        <img src="assets/sirius-logo.png" alt="SiRIUS Lab logo" width="170" height="167">
-        <div>
-          <p class="kicker">Welcome to the SiRIUS Lab</p>
-          <p>We investigate how interconnected infrastructure and urban systems perform, fail, and recover under compounding natural hazards and climate stressors.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="research.html">Explore research</a>
-            <a class="btn btn-ghost" href="people.html">Meet the lab</a>
-            <a class="btn btn-ghost" href="openings.html">Openings →</a>
-          </div>
-          <div class="stats" aria-label="Lab snapshot">
-            <div class="stat"><strong>482</strong><span>citations · Scholar, Oct 3, 2026</span></div>
-            <div class="stat"><strong>12</strong><span>h-index</span></div>
-            <div class="stat"><strong>12</strong><span>i10-index</span></div>
-            <div class="stat"><strong>54</strong><span>works</span></div>
-            <div class="stat"><strong>80</strong><span>presentations</span></div>
-          </div>
-        </div>
+<header class="page-strip"><div class="page-wrap"><p class="kicker">SiRIUS Lab</p><h1>News &amp; recognition</h1><p>Awards, new members, funded projects, and papers from the SiRIUS Lab, grouped by year.</p></div></header>
+<div class="page-wrap"><main class="main">
+    <div class="news-layout">
+      <nav class="year-nav" aria-label="Years"><span class="lbl">Archive</span><a href="#y2026">2026 <span style="color:var(--muted)">(11)</span></a><a href="#y2025">2025 <span style="color:var(--muted)">(16)</span></a><a href="#y2024">2024 <span style="color:var(--muted)">(5)</span></a><a href="https://sirius.unl.edu/news-updates/" target="_blank" rel="noopener">Older ↗</a></nav>
+      <div>
+      <section class="news-year" id="y2026" style="padding:0">
+        <h2>2026</h2>
+        <article class="post">
+          <p class="when">Sep 2026</p>
+          <div><h3>Accepted short paper at IEEE Digital Twin 2026<span class="cat paper">Research</span></h3><p><em>Digital Twins for Flood-Resilient Bridge Networks: Fidelity, Performance, and Tradeoffs</em>, IEEE Smart World Congress 2026, Rende, Italy.</p></div>
+        </article>
+        <article class="post">
+          <p class="when">Sep 2026</p>
+          <div><h3>Joined the EERI Early Career Committee<span class="cat service">Service</span></h3><p>Dr. Roohi joined the Earthquake Engineering Research Institute Early Career Committee (formerly the Younger Members Committee).</p></div>
+        </article>
+        <article class="post">
+          <p class="when">Aug 2026</p>
+          <div><h3>NSF POSE Phase II for the IN-CORE ecosystem begins<span class="cat grant">Funding</span></h3><p>Open-source ecosystem for interdependent networked community resilience modeling (2026–2028), with Dr. Roohi as co-PI. <a class="inline" href="research.html#fund-nsf-pose">Project</a></p></div>
+        </article>
+        <article class="post">
+          <p class="when">2026–2027</p>
+          <div><h3>New funded research directions<span class="cat grant">Funding</span></h3><p>Infrastructure–public health recovery under compounding hazards (with UNMC partners) and data-driven reliability of transmission systems for functional recovery.</p></div>
+        </article>
+        <article class="post">
+          <p class="when">Jun 2026</p>
+          <div><h3>Pramodit Adhikari places third in ASCE EMI competition<span class="cat award">Award</span></h3><p>Third place in the ASCE EMI Objective Resilience Student Paper and Presentation Competition.</p></div>
+        </article>
+        <article class="post">
+          <p class="when">Jun 2026</p>
+          <div><h3>Welcome, Dr. Sina Naeimi<span class="cat people">Lab</span></h3><p>Joined SiRIUS as a postdoctoral researcher in infrastructure and public-health resilience under compounding hazards. <a class="inline" href="people.html#postdocs">People</a></p></div>
+        </article>
+        <article class="post">
+          <p class="when">May 2026</p>
+          <div><h3>Empowering Community Resilience Award<span class="cat award">Award</span></h3><p>Dr. Roohi received the National VOAD Empowering Community Resilience Award (sponsored by Walmart) for the 2026 National VOAD Conference in Reno, Nevada.</p></div>
+        </article>
+        <article class="post">
+          <p class="when">2026</p>
+          <div><h3>Selected for EERI Learning From Earthquakes travel study<span class="cat award">Award</span></h3><p>Dr. Roohi was selected for the LFE travel-study program in Taiwan (October 18–23, 2026).</p></div>
+        </article>
+        <article class="post">
+          <p class="when">Apr 2026</p>
+          <div><h3>SiRIUS featured by the ASCE EMI Dynamics Committee<span class="cat service">Service</span></h3><p>Lab profile highlighted in the EMI eNewsletter.</p></div>
+        </article>
+        <article class="post">
+          <p class="when">Apr 2026</p>
+          <div><h3>Undergraduate research at UNL Student Research Days<span class="cat people">Lab</span></h3><p>Tyler Reida presented <em>Assessing Two-Year Recovery Trajectories After the 2024 Arbor Day Tornado Outbreak</em>.</p></div>
+        </article>
+        <article class="post">
+          <p class="when">Feb 2026</p>
+          <div><h3>Associate Editor, <em>The Monitor</em><span class="cat service">Service</span></h3><p>Dr. Roohi began a two-year term (2026–2028) as Associate Editor of <em>The Monitor</em>, the magazine of the Society for Civil Structural Health Monitoring.</p></div>
+        </article>
       </section>
-
-      <h2 class="h2" id="why"><span class="eyebrow">The name</span>Why SiRIUS?</h2>
-      <p class="body">Each part of the name points to how the lab works.</p>
-      <div class="why-grid">
-        <div class="why"><h3 class="w-teal">Smart</h3><p>Digital twins, sensing, and AI-enabled decision support that combine data with physics-based models of buildings and infrastructure.</p></div>
-        <div class="why"><h3 class="w-gold">Resilient</h3><p>Withstanding and recovering from earthquakes, extreme wind, flooding, fire, and climate-driven hazards, and the cascading impacts between them.</p></div>
-        <div class="why"><h3 class="w-navy">Infrastructure &amp; Urban Systems</h3><p>From single instrumented assets to bridges, lifelines, hospitals, networks, and whole communities.</p></div>
-      </div>
-
-      <h2 class="h2" id="overview"><span class="eyebrow">Overview</span>Research at SiRIUS</h2>
-      <p class="body">We integrate structural sensing, data fusion, and computational modeling to build digital twins that capture system behavior from instrumented assets to community scale. By embedding these models in decision-support and resilience platforms, especially open environments such as IN-CORE, we translate analysis into mitigation, design, and recovery decisions for communities and agencies.</p>
-      <p class="body">Our work is organized into four interconnected areas:</p>
-      <div class="area-list">
-        <a href="research.html#theme-dt-shm" style="--c:var(--teal)"><span><strong>Digital twins &amp; structural health</strong><span class="d">Model–data fusion for instrumented buildings when sensing is sparse.</span></span><span class="go">Explore →</span></a>
-        <a href="research.html#theme-community" style="--c:var(--gold-ink)"><span><strong>Community resilience &amp; open platforms</strong><span class="d">Functional recovery, inventory uncertainty, and IN-CORE tools planners can run.</span></span><span class="go">Explore →</span></a>
-        <a href="research.html#theme-multihazard" style="--c:var(--emerging)"><span><strong>Multi-hazard community systems</strong><span class="d">Tornado and extreme wind, cascading lifelines, equity-centered decision support.</span></span><span class="go">Explore →</span></a>
-        <a href="research.html#theme-networks" style="--c:var(--active)"><span><strong>Networks &amp; emerging hazards</strong><span class="d">Transportation networks under flood and climate stress; wildfire community resilience.</span></span><span class="go">Explore →</span></a>
-      </div>
-
-      <div class="callout">
-        <h3>A major direction: open resilience platforms</h3>
-        <p>Through NSF POSE Phase II (2026–2028), SiRIUS contributes to an open-source ecosystem for IN-CORE, the Interdependent Networked Community Resilience Modeling Environment, so community models become decision tools. <a href="research.html#fund-nsf-pose" style="color:var(--teal-deep);font-weight:700;text-decoration:underline">Project details →</a></p>
-      </div>
-
-      <h2 class="h2" id="collaborators"><span class="eyebrow">Collaborators</span>Academic collaborators &amp; partners</h2>
-      <ul class="collab-list">
-        <li><strong>John W. van de Lindt</strong> <span>(Colorado State University) · NSF POSE lead PI</span></li>
-        <li><strong>Jamie E. Padgett</strong> <span>(Rice University) · NSF POSE co-PI</span></li>
-        <li><strong>Jong S. Lee</strong> <span>(University of Illinois) · NSF POSE co-PI</span></li>
-        <li><strong>Xinyue Ye</strong> <span>(University of Alabama) · NSF POSE co-PI</span></li>
-        <li><strong>Eric M. Hernandez</strong> <span>(University of Vermont) · SHM &amp; observers</span></li>
-        <li><strong>Rodrigo Astroza</strong> <span>(Universidad de los Andes, Chile)</span></li>
-        <li><strong>Paolo Bocchini</strong> <span>(Lehigh University) · ASCE SEI catastrophe modeling</span></li>
-        <li><strong>Sardar Malek</strong> <span>(University of Victoria) · Mitacs co-supervisor</span></li>
-        <li><strong>Mahmoud (Moe) Alahmad &amp; Hamid Sharif</strong> <span>· transmission-system reliability co-PIs</span></li>
-        <li><strong>Christine E. Wittich</strong> <span>· flood digital twins co-author</span></li>
-        <li><strong>Harvey Cutler</strong> <span>· resilience modeling co-author</span></li>
-        <li><strong>Omar Sediek</strong> <span>· portfolio retrofit co-author</span></li>
-      </ul>
-      <div class="partner-row" aria-label="Partner programs">
-        <span>NIST Center for Risk-Based Community Resilience Planning</span><span>IN-CORE</span><span>University of Nebraska Medical Center</span><span>Nebraska Department of Transportation</span><span>NASEM / TRB ACRP</span><span>MATC</span>
-      </div>
-
-      <h2 class="h2" id="latest"><span class="eyebrow">News</span>Latest from the lab</h2>
-      <ul class="mini-news">
-        <li><span class="d">Sep 2026</span><span><strong>Accepted short paper at IEEE Digital Twin 2026</strong> on flood-resilient bridge networks.</span></li>
-        <li><span class="d">Aug 2026</span><span><strong>NSF POSE Phase II for the IN-CORE ecosystem begins</strong>, with Dr. Roohi as co-PI.</span></li>
-        <li><span class="d">Jun 2026</span><span><strong>Pramodit Adhikari places third</strong> in the ASCE EMI Objective Resilience Student Paper and Presentation Competition.</span></li>
-        <li><span class="d">Jun 2026</span><span><strong>Welcome, Dr. Sina Naeimi</strong>, postdoctoral researcher.</span></li>
-      </ul>
+      <section class="news-year" id="y2025" style="padding:0">
+        <h2>2025</h2>
+        <article class="post">
+          <p class="when">Dec 2025</p>
+          <div><h3>Welcome, Dr. Reza Filizadeh<span class="cat people">Lab</span></h3><p>SiRIUS welcomed a new postdoctoral researcher.</p></div>
+        </article>
+        <article class="post">
+          <p class="when">Dec 2025</p>
+          <div><h3>Abdallah Al-Zu'bi defends his dissertation<span class="cat people">Lab</span></h3><p>Congratulations on the successful defense of his doctoral dissertation.</p></div>
+        </article>
+        <article class="post">
+          <p class="when">Dec 2025</p>
+          <div><h3>Pramodit Adhikari passes comprehensive exam<span class="cat people">Lab</span></h3></div>
+        </article>
+        <article class="post">
+          <p class="when">Dec 2025</p>
+          <div><h3>IABSE Outstanding Scientific Paper Award 2025<span class="cat award">Award</span></h3><p>For <a class="inline" href="publications.html#pub-sei-2024-makhoul">Seismic Resilience of Interdependent Built Environment…</a> (Structural Engineering International, 2024), developed under IABSE Task Group 1.8. Presented at the IABSE Awards Gala in Zurich.</p></div>
+        </article>
+        <article class="post">
+          <p class="when">Nov 2025</p>
+          <div><h3>EOS OpenSees Awards: Certificate of Distinction / Honorable Mention<span class="cat award">Award</span></h3><p>For the ASCE <em>Journal of Engineering Mechanics</em> paper on <a class="inline" href="publications.html#pub-jem-2021">element-by-element dissipated hysteretic energy</a>.</p></div>
+        </article>
+        <article class="post">
+          <p class="when">Nov 2025</p>
+          <div><h3>Saeid Ghasemi receives Chancellor's Graduate Research Grant<span class="cat award">Award</span></h3><p>University of Nebraska–Lincoln.</p></div>
+        </article>
+        <article class="post">
+          <p class="when">Nov 2025</p>
+          <div><h3>Chair, ASCE EMI Objective Resilience Committee<span class="cat service">Service</span></h3><p>Dr. Roohi began serving as committee chair.</p></div>
+        </article>
+        <article class="post">
+          <p class="when">Sep 2025</p>
+          <div><h3>Editor's Choice, ASCE Journal of Structural Engineering<span class="cat award">Award</span></h3><p>For <a class="inline" href="publications.html#pub-jse-2025-hatay">Hospital Network Resilience in Hatay…</a> after the 2023 Türkiye earthquakes.</p></div>
+        </article>
+        <article class="post">
+          <p class="when">Sep 2025</p>
+          <div><h3>Systems Thinking Faculty Fellow<span class="cat award">Award</span></h3><p>Selected for the USDA Higher Education Challenge program.</p></div>
+        </article>
+        <article class="post">
+          <p class="when">Jul 2025</p>
+          <div><h3>Pramodit Adhikari completes IBHS internship<span class="cat people">Lab</span></h3><p>Summer research internship at the Insurance Institute for Business &amp; Home Safety.</p></div>
+        </article>
+        <article class="post">
+          <p class="when">May 2025</p>
+          <div><h3>FoBI 2025 Workshop<span class="cat service">Service</span></h3><p>Dr. Roohi co-organized and led the Durham School Future of Building Industry Workshop in Omaha, <em>AI for Resilient Communities: People, Built Environment, and Adaptation</em>.</p></div>
+        </article>
+        <article class="post">
+          <p class="when">May 2025</p>
+          <div><h3>National digital twin roadmap workshop<span class="cat service">Service</span></h3><p>Invited as one of 48 experts to co-develop a U.S. R&amp;D roadmap on multidimensional digital twins in the built environment.</p></div>
+        </article>
+        <article class="post">
+          <p class="when">Apr 2025</p>
+          <div><h3>College of Engineering Teaching Fellow<span class="cat award">Award</span></h3><p>Dr. Roohi was named a College of Engineering Teaching Fellow.</p></div>
+        </article>
+        <article class="post">
+          <p class="when">Apr 2025</p>
+          <div><h3>Geoffrey Sanderson at UNL Student Research Days<span class="cat award">Award</span></h3><p>College of Engineering competition winner for data-driven seismic functionality assessment of instrumented buildings.</p></div>
+        </article>
+        <article class="post">
+          <p class="when">Feb 2025</p>
+          <div><h3>Mitacs Globalink Research Internship<span class="cat award">Award</span></h3><p>Undergraduate Geoffrey Sanderson awarded a Mitacs Globalink Research Internship in Canada.</p></div>
+        </article>
+        <article class="post">
+          <p class="when">Jan 2025</p>
+          <div><h3>U.S.–Japan NHERI–NIED Research Collaboration Meeting<span class="cat service">Service</span></h3><p>Dr. Roohi participated as an invited U.S. delegate in Miki City, Japan.</p></div>
+        </article>
+      </section>
+      <section class="news-year" id="y2024" style="padding:0">
+        <h2>2024</h2>
+        <article class="post">
+          <p class="when">Jul 2024</p>
+          <div><h3>NSF award for tribal community resilience to extreme wind<span class="cat grant">Funding</span></h3><p>SiRIUS was awarded an NSF CIVIC grant to transform tribal community resilience against extreme wind hazards. <a class="inline" href="research.html#fund-nsf-civic">Project</a></p></div>
+        </article>
+        <article class="post">
+          <p class="when">Jul 2024</p>
+          <div><h3>NDOT award for an integrated resilience framework<span class="cat grant">Funding</span></h3><p>Bridge, transportation network, and community resilience for Nebraska. <a class="inline" href="research.html#fund-ndot">Project</a></p></div>
+        </article>
+        <article class="post">
+          <p class="when">Jul 2024</p>
+          <div><h3>Resilient Cities and Structures paper featured<span class="cat paper">Research</span></h3><p>Open-access <a class="inline" href="publications.html#pub-rcns-2024">paper</a> highlighted in the IN-CORE webinar <em>Next-Gen Resilience Modeling of Communities for Policy Decisions</em>.</p></div>
+        </article>
+        <article class="post">
+          <p class="when">May 2024</p>
+          <div><h3>New course: AREN 4940/8940 Infrastructure and Community Resilience<span class="cat service">Service</span></h3><p>Developed and taught at UNL.</p></div>
+        </article>
+        <article class="post">
+          <p class="when">May 2024</p>
+          <div><h3>UCARE funding for three undergraduates<span class="cat people">Lab</span></h3><p>Geoffrey Sanderson, Jordan Taylor, and Jed Fuller recommended for UCARE funding for 2024–2025.</p></div>
+        </article>
+      </section>
       <div class="more-row">
-        <a class="btn btn-teal" href="news.html">All news →</a>
-        <a class="btn btn-line" href="publications.html">Publications →</a>
+        <a class="btn btn-line" href="https://sirius.unl.edu/news-updates/" target="_blank" rel="noopener">Full archive on sirius.unl.edu ↗</a>
+        <a class="btn btn-teal" href="publications.html">Publications →</a>
       </div>
-
-      <div class="callout gold" id="join">
-        <h3>Share our vision?</h3>
-        <p>We welcome motivated undergraduate and graduate students interested in multi-hazard resilience, digital twins, sensing, and decision support. <a href="openings.html" style="color:var(--teal-deep);font-weight:700;text-decoration:underline">See openings →</a></p>
       </div>
-    </main>
-  </div>
+    </div>
+</main></div>
 
 <footer>
   <div class="container footer-inner" style="width:min(100% - 2.5rem, 1180px)">
