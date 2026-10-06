@@ -19,7 +19,7 @@ A static multi-page site. Each page is one self-contained HTML file with inline 
 | `people.html` | PI, postdocs, students, alumni |
 | `news.html` | News by year |
 | `openings.html` | How to join the lab |
-| `assets/` | `milad-roohi.jpg`, `sirius-logo.png` |
+| `assets/` | `sirius-logo.png` (logo only; no headshots) |
 
 Old single-page links (`index.html#publications`, `#research`, `#funding`, `#about`, `#news`, `#theme-*`, `#fund-*`, `#pub-*`) are forwarded to the new pages by a small script in the `<head>` of `index.html`.
 

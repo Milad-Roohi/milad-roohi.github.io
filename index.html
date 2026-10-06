@@ -864,6 +864,82 @@ footer { background: var(--white); }
   .profile ul { display:flex; flex-wrap:wrap; gap: 0.4rem; }
   .profile li { background: var(--paper); border:1px solid var(--line); border-radius: 999px; padding: 0.2rem 0.6rem 0.2rem 0.25rem; font-size: 0.78rem; }
 }
+/* ══ Palette 2026-10-06: restrained academic palette, one accent (muted blue) ══ */
+:root {
+  --ink: #1c2026; --ink-soft: #3e4651; --muted: #5d6673;
+  --line: #e2e5e9; --line-strong: #c9cfd6;
+  --paper: #f7f7f5; --panel: #f0f1ef; --white: #ffffff;
+  --accent: #2d5b88; --accent-ink: #1f4469; --accent-soft: #edf2f7;
+  --navy: var(--ink); --navy-2: var(--ink-soft);
+  --teal: var(--accent); --teal-deep: var(--accent-ink); --star: var(--accent); --gold-ink: var(--ink-soft);
+  --active: #2f6a4c; --active-bg: #edf4ef; --emerging: var(--accent); --emerging-bg: var(--accent-soft);
+}
+body { background: var(--paper); color: var(--ink); }
+/* Nav: light masthead */
+.site-nav, .site-nav.is-scrolled { background: rgba(255,255,255,0.96); border-bottom: 1px solid var(--line); box-shadow: none; }
+.site-nav.is-scrolled { box-shadow: 0 1px 0 var(--line), 0 6px 18px rgba(28,32,38,0.05); }
+.brand { color: var(--ink); }
+.brand img { background: #fff; box-shadow: 0 0 0 1px var(--line); }
+.brand .b-text small { color: var(--muted); }
+.nav-links a { color: var(--ink-soft); }
+.nav-links a:hover { color: var(--ink); background: var(--panel); }
+.nav-links a.is-active { color: var(--accent-ink); background: transparent; box-shadow: inset 0 -2px 0 var(--accent); }
+.nav-cta { background: var(--accent) !important; color: #fff !important; }
+.nav-cta:hover { background: var(--accent-ink) !important; }
+.nav-cta.is-active { box-shadow: none; }
+.nav-toggle { color: var(--ink); }
+.nav-links.open { background: #fff; border-bottom: 1px solid var(--line); }
+/* Dark bands → light */
+.hero, .banner, .page-strip, .about-band { background: var(--white); color: var(--ink); border-bottom: 1px solid var(--line); }
+.banner { border: 1px solid var(--line); }
+.hero::after, .banner::after, .page-strip::after, .person .ph::after { display: none; }
+.page-strip { background: var(--paper); }
+.page-strip h1, .page-strip h2, .banner h1, .banner h2, .hero h1 { color: var(--ink); }
+.page-strip p, .banner p, .hero-lead, .about-band p { color: var(--ink-soft); }
+.page-strip .eyebrow, .page-strip .kicker, .kicker { color: var(--accent); }
+.about-list li { color: var(--ink-soft); }
+.about-list li::before { background: var(--line-strong); }
+.hero-card { background: var(--white); border-color: var(--line); }
+.hero-card .role, .hero-meta, .stat span { color: var(--muted); }
+.hero-meta a { color: var(--accent); }
+.stat { border-top-color: var(--line); }
+.stat strong, .snapshot strong { color: var(--ink); }
+.btn-primary, .join .btn-primary, .btn-teal { background: var(--accent); color: #fff; }
+.btn-primary:hover, .join .btn-primary:hover, .btn-teal:hover { background: var(--accent-ink); }
+.btn-ghost { border-color: var(--line-strong); color: var(--ink); }
+.btn-ghost:hover { border-color: var(--ink-soft); background: var(--panel); }
+/* Soft tags & links */
+.tag, .open-links a, .funding-card .f-links a, details.pub-group > summary .count, .profile li .ic, .cat.paper { color: var(--accent-ink); background: var(--accent-soft); border-color: #d9e3ee; }
+.open-links a:hover, .funding-card .f-links a:hover { background: #e2eaf3; border-color: var(--accent); }
+.meta-row a, .post a.inline, .pub-theme a { text-decoration-color: rgba(45,91,136,0.35); }
+.research-item:hover, .pub:hover { background: var(--panel); }
+.pub:hover { box-shadow: inset 2px 0 0 var(--accent); }
+.research-cat:hover, .funding-card:hover, .news-card:hover { border-color: var(--line-strong); box-shadow: 0 8px 22px rgba(28,32,38,0.06); }
+.badge, .cat.award { background: var(--accent-soft); color: var(--accent-ink); }
+/* Neutral structure lines instead of coloured bars */
+.why, .pillar { border-top: 1px solid var(--line); }
+.why:nth-child(n), .pillar:nth-child(n) { border-top-color: var(--line); }
+.area-list a, .research-cat { border-left: 3px solid var(--line-strong); }
+.c-teal, .c-gold, .c-blue, .c-green { --c: var(--accent); }
+.callout, .callout.gold { background: var(--white); border: 1px solid var(--line); border-left: 3px solid var(--accent); }
+.callout h3 { color: var(--ink); }
+.news-year > h2 { border-bottom: 1px solid var(--line); }
+.alumni-cols h3, .person .p-role, .pi-feature .pos, .profile .pos { color: var(--accent-ink); }
+.side-cta { background: var(--white); color: var(--accent-ink); border: 1px solid var(--accent); }
+.side-cta:hover { background: var(--accent-soft); }
+/* People: initials instead of photos */
+.person .ph { background: var(--panel); border-bottom: 1px solid var(--line); }
+.avatar { background: var(--white); color: var(--ink-soft); border: 1px solid var(--line-strong); font-size: 1.45rem; width: 84px; height: 84px; }
+.mono { display: grid; place-items: center; border-radius: 50%; background: var(--white); border: 1px solid var(--line-strong); color: var(--ink); font-family: "Fraunces", Georgia, serif; font-weight: 600; letter-spacing: 0.02em; }
+.profile .mono { width: 96px; height: 96px; font-size: 1.9rem; margin-bottom: 0.9rem; }
+.pi-feature .mono { width: 180px; height: 180px; font-size: 3.4rem; }
+@media (max-width: 860px) {
+  .profile .mono { width: 64px; height: 64px; font-size: 1.3rem; margin: 0; grid-row: span 2; }
+  .pi-feature .mono { width: 120px; height: 120px; font-size: 2.3rem; }
+}
+.pi-feature { grid-template-columns: 180px 1fr; }
+@media (max-width: 760px) { .pi-feature { grid-template-columns: 1fr; } }
+footer { background: var(--white); border-top: 1px solid var(--line); }
 </style>
 </head>
 <body>
@@ -888,7 +964,7 @@ footer { background: var(--white); }
 <div class="page-wrap with-side">
     <aside class="sidebar" aria-label="Lab director">
       <div class="profile">
-        <img src="assets/milad-roohi.jpg" alt="Portrait of Milad Roohi" width="150" height="150">
+        <div class="mono" aria-hidden="true">MR</div>
         <h3>Milad Roohi, Ph.D.</h3>
         <p class="pos">Assistant Professor · Director, SiRIUS Lab</p>
         <p class="bio">Durham School of Architectural Engineering and Construction, University of Nebraska–Lincoln. College of Engineering Teaching Fellow.</p>
