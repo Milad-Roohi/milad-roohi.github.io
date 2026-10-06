@@ -9,7 +9,7 @@
 <link rel="icon" type="image/png" href="assets/sirius-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
   --ink: #0f1c2e;
@@ -936,6 +936,69 @@ body { background: var(--paper); color: var(--ink); }
 .pi-feature { grid-template-columns: 180px 1fr; }
 @media (max-width: 760px) { .pi-feature { grid-template-columns: 1fr; } }
 footer { background: var(--white); border-top: 1px solid var(--line); }
+
+/* ══ Typography 2026-10-06: Inter for headings; drop Fraunces ══ */
+:root {
+  --font-display: "Inter", system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Manrope", system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+body { font-family: var(--font-body); }
+.brand .b-text strong,
+.profile h3,
+.main h1.page-title,
+.main h2.h2,
+.lab-title,
+.why h3,
+.area-list a::before,
+.callout h3,
+.r-num,
+.pillar h3,
+details.pub-group > summary,
+.snapshot strong,
+.pi-feature h3,
+.avatar,
+.mono,
+.alumni-cols h3,
+.open-card h3,
+.news-year > h2,
+.page-strip h1 {
+  font-family: var(--font-display);
+}
+
+/* ══ Lab masthead: one line, compact ══ */
+.lab-title {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: baseline;
+  gap: 0.4rem;
+  font-weight: 600;
+  font-size: clamp(0.78rem, 0.55rem + 0.85vw, 1.15rem);
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  max-width: 100%;
+  margin: 0 0 1rem;
+}
+.lab-title .lab-name { flex: 0 1 auto; min-width: 0; }
+.lab-title .acr {
+  display: inline;
+  flex: 0 0 auto;
+  font-size: 0.92em;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: -0.01em;
+  margin-top: 0;
+  white-space: nowrap;
+}
+@media (max-width: 420px) {
+  .lab-title {
+    flex-wrap: wrap;
+    white-space: normal;
+    font-size: 0.82rem;
+    row-gap: 0.15rem;
+  }
+  .lab-title .acr { flex-basis: 100%; }
+}
 </style>
 </head>
 <body>
@@ -1025,6 +1088,16 @@ footer { background: var(--white); border-top: 1px solid var(--line); }
             <p class="p-meta">SEAoN Fellowship (2026–27) · IBHS research intern (2025)</p>
             <p class="p-focus">Building resilient communities in the face of climate change: climate-driven risks to infrastructure and AI-enabled decision support.</p>
             <div class="tag-row"><span class="tag">Tornado &amp; wind</span><span class="tag">Climate risk</span></div>
+          </div>
+        </article>
+        <article class="person">
+          <div class="ph"><div class="avatar" aria-hidden="true">EY</div></div>
+          <div class="pb">
+            <h4>Efe Mert Yildirim</h4>
+            <p class="p-role">Graduate Research Assistant · 2026–</p>
+            
+            <p class="p-focus">Structural health monitoring, digital twins, and model–data fusion.</p>
+            <div class="tag-row"><span class="tag">SHM</span><span class="tag">Digital twins</span></div>
           </div>
         </article>
         <article class="person">

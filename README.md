@@ -13,7 +13,7 @@ A static multi-page site. Each page is one self-contained HTML file with inline 
 
 | Page | Contents |
 | ---- | -------- |
-| `index.html` | Landing: lab overview, why the name, collaborators, latest news, join |
+| `index.html` | Landing: lab overview, why the name, latest news, join |
 | `research.html` | Research pillars, theme areas, testbeds, funded projects |
 | `publications.html` | Selected journal publications (published and accepted) |
 | `people.html` | PI, postdocs, students, alumni |
